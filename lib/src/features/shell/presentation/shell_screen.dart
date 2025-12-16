@@ -29,28 +29,28 @@ class _AppNavBar extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // Use MediaQuery directly for reliable width check
     final screenWidth = MediaQuery.of(context).size.width;
-    final isDesktop = screenWidth > 800;
+    final isDesktop = screenWidth > 768; // Standard tablet breakpoint
     final nav = ref.read(homeNavigationProvider);
 
-    return Center(
+    return Align(
+      alignment: Alignment.topCenter,
       child: Container(
-        // Ensure the navbar takes reasonable width but not full screen
-        width: isDesktop ? 1000 : 900,
-        constraints: const BoxConstraints(maxWidth: 1400),
-        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+        margin: const EdgeInsets.only(top: 20),
+        width: isDesktop ? 1000 : screenWidth * 0.92,
+        height: 80, // Explicit height to prevent collapse
         child: GlassBox(
-          opacity: 0.85, // Increased opacity for better visibility
-          blur: 20,
+          opacity: 0.9, // High visibility
+          blur: 25,
           color: AppColors.surface,
-          borderRadius: BorderRadius.circular(50),
+          borderRadius: BorderRadius.circular(100), // Pill shape
           border: Border.all(color: Colors.white.withValues(alpha: 0.2)),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 24,
+            ), // Reduced padding
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              mainAxisSize: MainAxisSize.max, // Ensure it stretches
               children: [
                 // LOGO ROW
                 Row(
