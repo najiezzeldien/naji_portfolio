@@ -45,6 +45,37 @@
   <meta name="apple-mobile-web-app-title" content="naji_portfolio">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
+  <!-- Critical iOS Safari Fixes -->
+  <style>
+    body {
+      /* Prevent rubber-banding/bouncing */
+      overscroll-behavior: none;
+      background-color: #0F172A;
+      /* Match App Background */
+
+      /* Force strict viewport size */
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+
+      /* Disable touch callouts */
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    /* specific fix for flutter view */
+    #flutter_container {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png" />
 
