@@ -22,7 +22,8 @@
   <meta name="description" content="A new Flutter project.">
 
   <!-- Critical for iOS Safari: Prevents zooming/shaking and white screen crashes -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 
 
 
@@ -34,6 +35,12 @@
 
   <!-- Critical iOS Safari Fixes -->
   <style>
+    html {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+
     body {
       /* Prevent rubber-banding/bouncing */
       overscroll-behavior: none;
