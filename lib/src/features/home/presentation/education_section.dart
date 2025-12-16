@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/utils/glass_box.dart';
+import '../../../core/theme/app_colors.dart';
+import '../../../core/utils/glass_box.dart';
 
 class EducationSection extends StatelessWidget {
   const EducationSection({super.key});
