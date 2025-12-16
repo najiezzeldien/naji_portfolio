@@ -14,6 +14,8 @@ class ShellScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
+      resizeToAvoidBottomInset: false, // Prevent viewport resize
+      drawerEnableOpenDragGesture: false, // Prevent swipe conflicts
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(80),
         child: const _AppNavBar(),
@@ -201,61 +203,64 @@ class _MobileDrawer extends ConsumerWidget {
 
     return Drawer(
       backgroundColor: AppColors.background,
-      child: Column(
-        children: [
-          Container(
-            height: 200,
-            decoration: const BoxDecoration(
-              gradient: AppColors.primaryGradient,
-            ),
-            child: const Center(
-              child: Text(
-                'N.',
-                style: TextStyle(
-                  fontSize: 60,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+      child: SingleChildScrollView(
+        physics: const ClampingScrollPhysics(), // Prevent iOS bounce
+        child: Column(
+          children: [
+            Container(
+              height: 200,
+              decoration: const BoxDecoration(
+                gradient: AppColors.primaryGradient,
+              ),
+              child: const Center(
+                child: Text(
+                  'N.',
+                  style: TextStyle(
+                    fontSize: 60,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),
-          ),
-          const SizedBox(height: 32),
-          _DrawerItem(
-            title: 'Home',
-            onTap: () {
-              context.pop(); // Close drawer
-              nav.scrollToSection(nav.heroKey);
-            },
-          ),
-          _DrawerItem(
-            title: 'Experience',
-            onTap: () {
-              context.pop();
-              nav.scrollToSection(nav.experienceKey);
-            },
-          ),
-          _DrawerItem(
-            title: 'Projects',
-            onTap: () {
-              context.pop();
-              nav.scrollToSection(nav.projectsKey);
-            },
-          ),
-          _DrawerItem(
-            title: 'Skills',
-            onTap: () {
-              context.pop();
-              nav.scrollToSection(nav.skillsKey);
-            },
-          ),
-          _DrawerItem(
-            title: 'Contact',
-            onTap: () {
-              context.pop();
-              nav.scrollToSection(nav.contactKey);
-            },
-          ),
-        ],
+            const SizedBox(height: 32),
+            _DrawerItem(
+              title: 'Home',
+              onTap: () {
+                context.pop(); // Close drawer
+                nav.scrollToSection(nav.heroKey);
+              },
+            ),
+            _DrawerItem(
+              title: 'Experience',
+              onTap: () {
+                context.pop();
+                nav.scrollToSection(nav.experienceKey);
+              },
+            ),
+            _DrawerItem(
+              title: 'Projects',
+              onTap: () {
+                context.pop();
+                nav.scrollToSection(nav.projectsKey);
+              },
+            ),
+            _DrawerItem(
+              title: 'Skills',
+              onTap: () {
+                context.pop();
+                nav.scrollToSection(nav.skillsKey);
+              },
+            ),
+            _DrawerItem(
+              title: 'Contact',
+              onTap: () {
+                context.pop();
+                nav.scrollToSection(nav.contactKey);
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
