@@ -112,6 +112,11 @@ class _AppNavBar extends ConsumerWidget {
                       ),
                       const SizedBox(width: 8),
                       _NavBarItem(
+                        title: 'Education',
+                        onTap: () => nav.scrollToSection(nav.educationKey),
+                      ),
+                      const SizedBox(width: 8),
+                      _NavBarItem(
                         title: 'Projects',
                         onTap: () => nav.scrollToSection(nav.projectsKey),
                       ),
@@ -236,6 +241,13 @@ class _MobileDrawer extends ConsumerWidget {
               onTap: () {
                 context.pop();
                 nav.scrollToSection(nav.experienceKey);
+              },
+            ),
+            _DrawerItem(
+              title: 'Education',
+              onTap: () {
+                context.pop();
+                nav.scrollToSection(nav.educationKey);
               },
             ),
             _DrawerItem(

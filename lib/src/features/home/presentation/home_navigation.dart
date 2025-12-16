@@ -9,6 +9,7 @@ class HomeNavigation {
   final GlobalKey heroKey = GlobalKey();
   final GlobalKey experienceKey = GlobalKey();
   final GlobalKey projectsKey = GlobalKey();
+  final GlobalKey educationKey = GlobalKey();
   final GlobalKey skillsKey = GlobalKey();
   final GlobalKey contactKey = GlobalKey();
 

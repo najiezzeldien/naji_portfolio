@@ -48,11 +48,8 @@ class ContactSection extends StatelessWidget {
           ),
           const SizedBox(height: 80),
           const Text(
-            '© 2024 Naji Ezzeldien. All rights reserved.',
-            style: TextStyle(
-              fontSize: 14,
-              color: AppColors.textSecondary,
-            ),
+            '© 2025 Naji Ezzeldien. All rights reserved.',
+            style: TextStyle(fontSize: 14, color: AppColors.textSecondary),
           ),
         ],
       ),
