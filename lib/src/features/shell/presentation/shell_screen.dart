@@ -37,11 +37,11 @@ class _AppNavBar extends ConsumerWidget {
         constraints: const BoxConstraints(maxWidth: 1400),
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
         child: GlassBox(
-          opacity: 0.1,
+          opacity: 0.7,
           blur: 20,
-          color: AppColors.background,
+          color: AppColors.surface,
           borderRadius: BorderRadius.circular(50),
-          border: Border.all(color: Colors.white.withValues(alpha: 0.08)),
+          border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
             child: Row(
@@ -72,7 +72,7 @@ class _AppNavBar extends ConsumerWidget {
                       style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
-                        color: AppColors.textPrimary,
+                        color: Colors.white,
                         letterSpacing: -0.5,
                       ),
                     ),
@@ -157,8 +157,8 @@ class _NavBarItemState extends State<_NavBarItem> {
           child: Text(
             widget.title,
             style: TextStyle(
-              color: _isHovered ? AppColors.primary : AppColors.textPrimary,
-              fontWeight: FontWeight.w500,
+              color: _isHovered ? AppColors.primary : Colors.white,
+              fontWeight: FontWeight.w600,
               fontSize: 15,
             ),
           ),
