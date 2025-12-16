@@ -29,32 +29,46 @@ class _AppNavBar extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isDesktop = ResponsiveBreakpoints.of(context).largerThan(TABLET);
+    // Use MediaQuery directly for reliable width check
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isDesktop = screenWidth > 800;
     final nav = ref.read(homeNavigationProvider);
 
     return Center(
       child: Container(
+        // Ensure the navbar takes reasonable width but not full screen
+        width: isDesktop ? 1000 : 900,
         constraints: const BoxConstraints(maxWidth: 1400),
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
         child: GlassBox(
-          opacity: 0.7,
+          opacity: 0.85, // Increased opacity for better visibility
           blur: 20,
           color: AppColors.surface,
           borderRadius: BorderRadius.circular(50),
-          border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
+          border: Border.all(color: Colors.white.withValues(alpha: 0.2)),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+            padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisSize: MainAxisSize.max, // Ensure it stretches
               children: [
+                // LOGO ROW
                 Row(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Container(
-                      width: 32,
-                      height: 32,
+                      width: 38,
+                      height: 38,
                       decoration: BoxDecoration(
                         gradient: AppColors.primaryGradient,
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppColors.primary.withValues(alpha: 0.3),
+                            blurRadius: 8,
+                            offset: const Offset(0, 4),
+                          ),
+                        ],
                       ),
                       child: const Center(
                         child: Text(
@@ -62,6 +76,7 @@ class _AppNavBar extends ConsumerWidget {
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
+                            fontSize: 20,
                           ),
                         ),
                       ),
@@ -70,45 +85,54 @@ class _AppNavBar extends ConsumerWidget {
                     const Text(
                       'Naji.',
                       style: TextStyle(
-                        fontSize: 24,
+                        fontSize: 26,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
-                        letterSpacing: -0.5,
+                        letterSpacing: 0.5,
                       ),
                     ),
                   ],
                 ),
+
+                // DESKTOP MENU
                 if (isDesktop)
                   Row(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       _NavBarItem(
                         title: 'Home',
                         onTap: () => nav.scrollToSection(nav.heroKey),
                       ),
+                      const SizedBox(width: 8),
                       _NavBarItem(
                         title: 'Experience',
                         onTap: () => nav.scrollToSection(nav.experienceKey),
                       ),
+                      const SizedBox(width: 8),
                       _NavBarItem(
                         title: 'Projects',
                         onTap: () => nav.scrollToSection(nav.projectsKey),
                       ),
+                      const SizedBox(width: 8),
                       _NavBarItem(
                         title: 'Skills',
                         onTap: () => nav.scrollToSection(nav.skillsKey),
                       ),
+                      const SizedBox(width: 8),
                       _NavBarItem(
                         title: 'Contact',
                         onTap: () => nav.scrollToSection(nav.contactKey),
                       ),
                     ],
                   )
+                // MOBILE DRAWER
                 else
                   Builder(
                     builder: (context) => IconButton(
                       icon: const Icon(
                         Icons.menu,
-                        color: AppColors.textPrimary,
+                        color: Colors.white,
+                        size: 28,
                       ),
                       onPressed: () {
                         Scaffold.of(context).openEndDrawer();
