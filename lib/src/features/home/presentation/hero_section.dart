@@ -28,7 +28,8 @@ class HeroSection extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           ShaderMask(
-            shaderCallback: (bounds) => AppColors.primaryGradient.createShader(bounds),
+            shaderCallback: (bounds) =>
+                AppColors.primaryGradient.createShader(bounds),
             child: Text(
               'Naji Ezzeldien',
               textAlign: TextAlign.center,
@@ -42,7 +43,7 @@ class HeroSection extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           Text(
-            'Flutter & Mobile App Developer',
+            'Mobile Applications Engineer',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: isDesktop ? 32 : 24,
@@ -52,12 +53,9 @@ class HeroSection extends StatelessWidget {
           ),
           const SizedBox(height: 24),
           const Text(
-            'Building high-performance, beautiful mobile applications.',
+            'Building high-performance, scalable mobile applications with exceptional user experiences.',
             textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 18,
-              color: AppColors.textSecondary,
-            ),
+            style: TextStyle(fontSize: 18, color: AppColors.textSecondary),
           ),
         ],
       ),

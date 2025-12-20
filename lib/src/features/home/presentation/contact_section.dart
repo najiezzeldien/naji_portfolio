@@ -32,17 +32,21 @@ class ContactSection extends StatelessWidget {
             children: [
               _SocialButton(
                 icon: Icons.email_outlined,
-                onTap: () => launchUrl(Uri.parse('mailto:naji@example.com')),
+                onTap: () =>
+                    launchUrl(Uri.parse('mailto:aboalnaja10@gmail.com')),
               ),
               const SizedBox(width: 24),
               _SocialButton(
                 icon: FontAwesomeIcons.linkedinIn,
-                onTap: () => launchUrl(Uri.parse('https://linkedin.com')),
+                onTap: () => launchUrl(
+                  Uri.parse('https://www.linkedin.com/in/najiezzeldien'),
+                ),
               ),
               const SizedBox(width: 24),
               _SocialButton(
                 icon: FontAwesomeIcons.github,
-                onTap: () => launchUrl(Uri.parse('https://github.com')),
+                onTap: () =>
+                    launchUrl(Uri.parse('https://github.com/najiezzeldien')),
               ),
             ],
           ),

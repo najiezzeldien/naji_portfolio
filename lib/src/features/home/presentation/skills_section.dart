@@ -8,8 +8,22 @@ class SkillsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final skills = [
-      'Flutter', 'Dart', 'Firebase', 'REST API', 'Git', 'UI/UX Design', 
-      'State Management (Riverpod, Bloc)', 'Clean Architecture', 'Unit Testing'
+      // Languages
+      'Dart', 'Java', 'C#', 'C++',
+      // Core Concepts
+      'OOP', 'OOD', 'SOLID Principles', 'Design Patterns', 'Data Structures', 'Algorithms',
+      // Frameworks & Libraries
+      'Flutter', 'ASP.NET Web API',
+      // State Management
+      'Riverpod', 'Bloc', 'Provider', 'GetX',
+      // Architecture & Practices
+      'Clean Architecture', 'Clean Code', 'MVVM', 'TDD', 'Agile/Scrum',
+      // Tools & Platforms
+      'Git', 'GitHub', 'CI/CD', 'Firebase', 'Dio', 'GoRouter',
+      // Advanced Features
+      'Payment Gateway Integration', 'Hardware Integration', 
+      'Real-time Communication (WebSocket, Socket.io)', 'Push Notifications',
+      'Responsive UI Design', 'Localization', 'QR Code Generation/Scanning',
     ];
 
     return Container(
