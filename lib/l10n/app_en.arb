@@ -1,0 +1,18 @@
+{
+    "aboutMe": "About Me",
+    "home": "Home",
+    "education": "Education",
+    "projects": "Projects",
+    "contact": "Contact",
+    "name": "Naji Ezzeldien",
+    "role": "Flutter Developer",
+    "intro": "I build beautiful and functional cross-platform applications.",
+    "skills": "Skills",
+    "experience": "Experience",
+    "downloadCV": "Download CV",
+    "email": "Email",
+    "phone": "Phone",
+    "linkedIn": "LinkedIn",
+    "gitHub": "GitHub",
+    "description": "Portfolio Description"
+}

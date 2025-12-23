@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:naji_portfolio/l10n/app_localizations.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/utils/glass_box.dart';
 import '../../home/presentation/home_navigation.dart';
+import '../../../core/locale/locale_provider.dart';
 
 class ShellScreen extends StatelessWidget {
   final Widget child;
@@ -33,6 +35,7 @@ class _AppNavBar extends ConsumerWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     final isDesktop = screenWidth > 768; // Standard tablet breakpoint
     final nav = ref.read(homeNavigationProvider);
+    final currentLocale = ref.watch(localeProvider);
 
     return Align(
       alignment: Alignment.topCenter,
@@ -101,33 +104,52 @@ class _AppNavBar extends ConsumerWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       _NavBarItem(
-                        title: 'Home',
+                        title: AppLocalizations.of(context)!.home,
                         onTap: () => nav.scrollToSection(nav.heroKey),
                       ),
                       const SizedBox(width: 8),
                       _NavBarItem(
-                        title: 'Experience',
+                        title: AppLocalizations.of(context)!.experience,
                         onTap: () => nav.scrollToSection(nav.experienceKey),
                       ),
                       const SizedBox(width: 8),
                       _NavBarItem(
-                        title: 'Education',
+                        title: AppLocalizations.of(context)!.education,
                         onTap: () => nav.scrollToSection(nav.educationKey),
                       ),
                       const SizedBox(width: 8),
                       _NavBarItem(
-                        title: 'Projects',
+                        title: AppLocalizations.of(context)!.projects,
                         onTap: () => nav.scrollToSection(nav.projectsKey),
                       ),
                       const SizedBox(width: 8),
                       _NavBarItem(
-                        title: 'Skills',
+                        title: AppLocalizations.of(context)!.skills,
                         onTap: () => nav.scrollToSection(nav.skillsKey),
                       ),
                       const SizedBox(width: 8),
                       _NavBarItem(
-                        title: 'Contact',
+                        title: AppLocalizations.of(context)!.contact,
                         onTap: () => nav.scrollToSection(nav.contactKey),
+                      ),
+                      const SizedBox(width: 16),
+                      // Language Switcher
+                      IconButton(
+                        onPressed: () {
+                          final newLocale = currentLocale.languageCode == 'en'
+                              ? const Locale('ar')
+                              : const Locale('en');
+                          ref
+                              .read(localeProvider.notifier)
+                              .setLocale(newLocale);
+                        },
+                        icon: Text(
+                          currentLocale.languageCode == 'en' ? 'AR' : 'EN',
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ),
                     ],
                   )
@@ -229,45 +251,67 @@ class _MobileDrawer extends ConsumerWidget {
             ),
             const SizedBox(height: 32),
             _DrawerItem(
-              title: 'Home',
+              title: AppLocalizations.of(context)!.home,
               onTap: () {
                 context.pop(); // Close drawer
                 nav.scrollToSection(nav.heroKey);
               },
             ),
             _DrawerItem(
-              title: 'Experience',
+              title: AppLocalizations.of(context)!.experience,
               onTap: () {
                 context.pop();
                 nav.scrollToSection(nav.experienceKey);
               },
             ),
             _DrawerItem(
-              title: 'Education',
+              title: AppLocalizations.of(context)!.education,
               onTap: () {
                 context.pop();
                 nav.scrollToSection(nav.educationKey);
               },
             ),
             _DrawerItem(
-              title: 'Projects',
+              title: AppLocalizations.of(context)!.projects,
               onTap: () {
                 context.pop();
                 nav.scrollToSection(nav.projectsKey);
               },
             ),
             _DrawerItem(
-              title: 'Skills',
+              title: AppLocalizations.of(context)!.skills,
               onTap: () {
                 context.pop();
                 nav.scrollToSection(nav.skillsKey);
               },
             ),
             _DrawerItem(
-              title: 'Contact',
+              title: AppLocalizations.of(context)!.contact,
               onTap: () {
                 context.pop();
                 nav.scrollToSection(nav.contactKey);
+              },
+            ),
+            const SizedBox(height: 16),
+            Consumer(
+              builder: (context, ref, child) {
+                final currentLocale = ref.watch(localeProvider);
+                return ListTile(
+                  leading: const Icon(Icons.language, color: AppColors.primary),
+                  title: Text(
+                    currentLocale.languageCode == 'en' ? 'Arabic' : 'English',
+                    style: const TextStyle(
+                      fontSize: 16,
+                      color: AppColors.textPrimary,
+                    ),
+                  ),
+                  onTap: () {
+                    final newLocale = currentLocale.languageCode == 'en'
+                        ? const Locale('ar')
+                        : const Locale('en');
+                    ref.read(localeProvider.notifier).setLocale(newLocale);
+                  },
+                );
               },
             ),
           ],
