@@ -18,10 +18,12 @@ class ProjectsSection extends StatelessWidget {
 
     // Dynamic grid count
     int crossAxisCount = 3;
-    if (ResponsiveBreakpoints.of(context).smallerThan(DESKTOP))
+    if (ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)) {
       crossAxisCount = 2;
-    if (ResponsiveBreakpoints.of(context).smallerThan(TABLET))
+    }
+    if (ResponsiveBreakpoints.of(context).smallerThan(TABLET)) {
       crossAxisCount = 1;
+    }
 
     return Container(
       width: double.infinity,
