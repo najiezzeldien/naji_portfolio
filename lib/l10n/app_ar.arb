@@ -1,6 +1,9 @@
 {
+    "@@locale": "ar",
     "aboutMe": "نبذة عني",
     "home": "الرئيسية",
+    "appTitle": "ناجي.",
+    "appLogoChar": "ن",
     "education": "المؤهلات العلمية",
     "projects": "المشاريع",
     "contact": "تواصل معي",

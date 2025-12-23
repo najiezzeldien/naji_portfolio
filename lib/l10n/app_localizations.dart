@@ -110,6 +110,18 @@ abstract class AppLocalizations {
   /// **'Home'**
   String get home;
 
+  /// No description provided for @appTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Naji.'**
+  String get appTitle;
+
+  /// No description provided for @appLogoChar.
+  ///
+  /// In en, this message translates to:
+  /// **'N'**
+  String get appLogoChar;
+
   /// No description provided for @education.
   ///
   /// In en, this message translates to:

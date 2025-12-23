@@ -1,6 +1,9 @@
 {
+    "@@locale": "en",
     "aboutMe": "About Me",
     "home": "Home",
+    "appTitle": "Naji.",
+    "appLogoChar": "N",
     "education": "Education",
     "projects": "Projects",
     "contact": "Contact",

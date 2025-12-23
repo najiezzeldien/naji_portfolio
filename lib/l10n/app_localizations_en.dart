@@ -15,6 +15,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get home => 'Home';
 
   @override
+  String get appTitle => 'Naji.';
+
+  @override
+  String get appLogoChar => 'N';
+
+  @override
   String get education => 'Education';
 
   @override

@@ -74,10 +74,10 @@ class _AppNavBar extends ConsumerWidget {
                           ),
                         ],
                       ),
-                      child: const Center(
+                      child: Center(
                         child: Text(
-                          "N",
-                          style: TextStyle(
+                          AppLocalizations.of(context)!.appLogoChar,
+                          style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
                             fontSize: 20,
@@ -86,9 +86,9 @@ class _AppNavBar extends ConsumerWidget {
                       ),
                     ),
                     const SizedBox(width: 12),
-                    const Text(
-                      'Naji.',
-                      style: TextStyle(
+                    Text(
+                      AppLocalizations.of(context)!.appTitle,
+                      style: const TextStyle(
                         fontSize: 26,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
@@ -238,10 +238,10 @@ class _MobileDrawer extends ConsumerWidget {
               decoration: const BoxDecoration(
                 gradient: AppColors.primaryGradient,
               ),
-              child: const Center(
+              child: Center(
                 child: Text(
-                  'N.',
-                  style: TextStyle(
+                  AppLocalizations.of(context)!.appLogoChar,
+                  style: const TextStyle(
                     fontSize: 60,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,

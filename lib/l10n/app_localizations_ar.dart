@@ -15,6 +15,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get home => 'الرئيسية';
 
   @override
+  String get appTitle => 'ناجي.';
+
+  @override
+  String get appLogoChar => 'ن';
+
+  @override
   String get education => 'المؤهلات العلمية';
 
   @override

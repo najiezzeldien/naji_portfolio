@@ -18,8 +18,10 @@ class ProjectsSection extends StatelessWidget {
 
     // Dynamic grid count
     int crossAxisCount = 3;
-    if (ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)) crossAxisCount = 2;
-    if (ResponsiveBreakpoints.of(context).smallerThan(TABLET)) crossAxisCount = 1;
+    if (ResponsiveBreakpoints.of(context).smallerThan(DESKTOP))
+      crossAxisCount = 2;
+    if (ResponsiveBreakpoints.of(context).smallerThan(TABLET))
+      crossAxisCount = 1;
 
     return Container(
       width: double.infinity,
@@ -27,9 +29,7 @@ class ProjectsSection extends StatelessWidget {
         vertical: isMobile ? 48 : 80,
         horizontal: isMobile ? 16 : 24,
       ),
-      color: Colors.black.withValues(
-        alpha: 0.2,
-      ),
+      color: Colors.black.withValues(alpha: 0.2),
       child: Center(
         child: Container(
           constraints: const BoxConstraints(maxWidth: 1200),
@@ -47,7 +47,10 @@ class ProjectsSection extends StatelessWidget {
               const SizedBox(height: 16),
               Text(
                 AppLocalizations.of(context)!.projectsSubtitle,
-                style: const TextStyle(fontSize: 18, color: AppColors.textSecondary),
+                style: const TextStyle(
+                  fontSize: 18,
+                  color: AppColors.textSecondary,
+                ),
               ),
               const SizedBox(height: 60),
               GridView.builder(
@@ -155,7 +158,7 @@ class _ProjectCardState extends State<_ProjectCard> {
                   children: [
                     if (widget.project.appStoreUrl != null)
                       Padding(
-                        padding: const EdgeInsets.only(right: 12),
+                        padding: const EdgeInsetsDirectional.only(end: 12),
                         child: _StoreButton(
                           icon: FontAwesomeIcons.appStore,
                           url: widget.project.appStoreUrl!,
