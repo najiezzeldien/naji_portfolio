@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:naji_portfolio/l10n/app_localizations.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/utils/glass_box.dart';
 
@@ -18,9 +19,9 @@ class EducationSection extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // HEADER
-              const Text(
-                'Education',
-                style: TextStyle(
+              Text(
+                AppLocalizations.of(context)!.education,
+                style: const TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
@@ -39,19 +40,17 @@ class EducationSection extends StatelessWidget {
 
               // EDUCATION LIST
               _EducationCard(
-                degree: 'Master in Information Technology',
-                school: 'University of Sciences and Technology, Omdurman, Sudan',
-                date: 'October 2018',
-                description:
-                    'Thesis focused on data mining in economics, involving collection and analysis of public opinions on the Sudanese economy from Twitter. Utilized RapidMiner Studio for data classification.',
+                degree: AppLocalizations.of(context)!.masterDegree,
+                school: AppLocalizations.of(context)!.masterSchool,
+                date: AppLocalizations.of(context)!.masterDate,
+                description: AppLocalizations.of(context)!.masterDescription,
               ),
               const SizedBox(height: 24),
               _EducationCard(
-                degree: 'Bachelor of Computer Sciences',
-                school: 'University of Sciences and Technology, Omdurman, Sudan',
-                date: 'October 2015',
-                description:
-                    'Final project: Developed an Android mobile application using Java for voice calls over Wi-Fi Direct between two Android devices.',
+                degree: AppLocalizations.of(context)!.bachelorDegree,
+                school: AppLocalizations.of(context)!.bachelorSchool,
+                date: AppLocalizations.of(context)!.bachelorDate,
+                description: AppLocalizations.of(context)!.bachelorDescription,
               ),
             ],
           ),

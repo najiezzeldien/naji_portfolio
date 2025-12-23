@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:naji_portfolio/l10n/app_localizations.dart';
 import '../../../core/theme/app_colors.dart';
 
 class ContactSection extends StatelessWidget {
@@ -13,18 +14,18 @@ class ContactSection extends StatelessWidget {
       color: Colors.black.withValues(alpha: 0.3),
       child: Column(
         children: [
-          const Text(
-            'Get in Touch',
-            style: TextStyle(
+          Text(
+            AppLocalizations.of(context)!.getInTouch,
+            style: const TextStyle(
               fontSize: 32,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
             ),
           ),
           const SizedBox(height: 16),
-          const Text(
-            'Have a project in mind? Let\'s work together.',
-            style: TextStyle(fontSize: 18, color: AppColors.textSecondary),
+          Text(
+            AppLocalizations.of(context)!.contactSubtitle,
+            style: const TextStyle(fontSize: 18, color: AppColors.textSecondary),
           ),
           const SizedBox(height: 48),
           Row(
@@ -51,9 +52,9 @@ class ContactSection extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 80),
-          const Text(
-            '© 2025 Naji Ezzeldien. All rights reserved.',
-            style: TextStyle(fontSize: 14, color: AppColors.textSecondary),
+          Text(
+            AppLocalizations.of(context)!.copyright,
+            style: const TextStyle(fontSize: 14, color: AppColors.textSecondary),
           ),
         ],
       ),

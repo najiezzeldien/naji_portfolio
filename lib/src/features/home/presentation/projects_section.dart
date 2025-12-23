@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:naji_portfolio/l10n/app_localizations.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/utils/glass_box.dart';
 import '../domain/project_model.dart';
@@ -13,6 +14,7 @@ class ProjectsSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDesktop = ResponsiveBreakpoints.of(context).largerThan(TABLET);
     final isMobile = ResponsiveBreakpoints.of(context).smallerThan(TABLET);
+    final projects = Project.getProjects(context);
 
     // Dynamic grid count
     int crossAxisCount = 3;
@@ -35,7 +37,7 @@ class ProjectsSection extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Featured Projects',
+                AppLocalizations.of(context)!.featuredProjects,
                 style: TextStyle(
                   fontSize: isDesktop ? 48 : (isMobile ? 32 : 36),
                   fontWeight: FontWeight.bold,
@@ -43,9 +45,9 @@ class ProjectsSection extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              const Text(
-                'A selection of apps I have built.',
-                style: TextStyle(fontSize: 18, color: AppColors.textSecondary),
+              Text(
+                AppLocalizations.of(context)!.projectsSubtitle,
+                style: const TextStyle(fontSize: 18, color: AppColors.textSecondary),
               ),
               const SizedBox(height: 60),
               GridView.builder(

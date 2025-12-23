@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:naji_portfolio/l10n/app_localizations.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/utils/glass_box.dart';
 
@@ -7,23 +8,24 @@ class SkillsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final skills = [
       // Languages
       'Dart', 'Java', 'C#', 'C++',
       // Core Concepts
-      'OOP', 'OOD', 'SOLID Principles', 'Design Patterns', 'Data Structures', 'Algorithms',
+      'OOP', 'OOD', l10n.skillSolid, l10n.skillDesignPatterns, l10n.skillDataStructures, l10n.skillAlgorithms,
       // Frameworks & Libraries
       'Flutter', 'ASP.NET Web API',
       // State Management
       'Riverpod', 'Bloc', 'Provider', 'GetX',
       // Architecture & Practices
-      'Clean Architecture', 'Clean Code', 'MVVM', 'TDD', 'Agile/Scrum',
+      l10n.skillCleanArch, l10n.skillCleanCode, 'MVVM', 'TDD', 'Agile/Scrum',
       // Tools & Platforms
       'Git', 'GitHub', 'CI/CD', 'Firebase', 'Dio', 'GoRouter',
       // Advanced Features
-      'Payment Gateway Integration', 'Hardware Integration', 
-      'Real-time Communication (WebSocket, Socket.io)', 'Push Notifications',
-      'Responsive UI Design', 'Localization', 'QR Code Generation/Scanning',
+      l10n.skillPaymentGateway, l10n.skillHardware, 
+      l10n.skillRealTime, l10n.skillPushNotifications,
+      l10n.skillResponsiveUI, l10n.skillLocalization, l10n.skillQRCode,
     ];
 
     return Container(
@@ -33,9 +35,9 @@ class SkillsSection extends StatelessWidget {
           constraints: const BoxConstraints(maxWidth: 1000),
           child: Column(
             children: [
-              const Text(
-                'Skills',
-                style: TextStyle(
+              Text(
+                l10n.skills,
+                style: const TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:naji_portfolio/l10n/app_localizations.dart';
 import '../../../core/theme/app_colors.dart';
 
 class AboutSection extends StatelessWidget {
@@ -11,44 +12,40 @@ class AboutSection extends StatelessWidget {
       child: Center(
         child: Container(
           constraints: const BoxConstraints(maxWidth: 800),
-          child: const Column(
+          child: Column(
             children: [
               Text(
-                'About Me',
-                style: TextStyle(
+                AppLocalizations.of(context)!.aboutMe,
+                style: const TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
                 ),
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               Text(
-                'Highly driven Mobile Applications Engineer with over 4 years of expertise in crafting user-focused applications for both Android and iOS platforms utilizing the Flutter framework. I have successfully deployed 6 applications to Google Play, the Apple App Store, and the Sunmi store, accumulating over 27,000 downloads.',
+                AppLocalizations.of(context)!.aboutMeDescription,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 18,
                   color: AppColors.textSecondary,
                   height: 1.6,
                 ),
               ),
-              SizedBox(height: 32),
+              const SizedBox(height: 32),
               Text(
-                'Core Strengths',
-                style: TextStyle(
+                AppLocalizations.of(context)!.coreStrengths,
+                style: const TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Text(
-                '• Developing scalable, secure, and maintainable mobile applications\n'
-                '• Architecting solutions using Clean Architecture and Clean Code principles\n'
-                '• Advanced state management (Riverpod, Bloc) and dependency injection patterns\n'
-                '• Integrating complex features: payment gateways, Firebase services, real-time communication, hardware integration\n'
-                '• Building responsive, localized applications with exceptional user experiences',
+                AppLocalizations.of(context)!.coreStrengthsList,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                   color: AppColors.textSecondary,
                   height: 1.8,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:naji_portfolio/l10n/app_localizations.dart';
 import '../../../core/theme/app_colors.dart';
 
 class HeroSection extends StatelessWidget {
@@ -18,7 +19,7 @@ class HeroSection extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'Hello, I am',
+            AppLocalizations.of(context)!.helloIAm,
             style: TextStyle(
               fontSize: isDesktop ? 24 : 18,
               color: AppColors.primary,
@@ -31,7 +32,7 @@ class HeroSection extends StatelessWidget {
             shaderCallback: (bounds) =>
                 AppColors.primaryGradient.createShader(bounds),
             child: Text(
-              'Naji Ezzeldien',
+              AppLocalizations.of(context)!.name, // Using 'name' key
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: isDesktop ? 80 : 48,
@@ -43,7 +44,7 @@ class HeroSection extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           Text(
-            'Mobile Applications Engineer',
+            AppLocalizations.of(context)!.mobileAppsEngineer,
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: isDesktop ? 32 : 24,
@@ -52,10 +53,10 @@ class HeroSection extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 24),
-          const Text(
-            'Building high-performance, scalable mobile applications with exceptional user experiences.',
+          Text(
+            AppLocalizations.of(context)!.heroDescription,
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 18, color: AppColors.textSecondary),
+            style: const TextStyle(fontSize: 18, color: AppColors.textSecondary),
           ),
         ],
       ),

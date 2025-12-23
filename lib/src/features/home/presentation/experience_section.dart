@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:naji_portfolio/l10n/app_localizations.dart';
 import '../../../core/theme/app_colors.dart';
 import '../domain/experience_model.dart';
 
@@ -11,6 +12,7 @@ class ExperienceSection extends StatelessWidget {
     // Check if device is desktop or tablet
     final isDesktop = ResponsiveBreakpoints.of(context).largerThan(TABLET);
     final isMobile = ResponsiveBreakpoints.of(context).smallerThan(TABLET);
+    final experiences = Experience.getExperiences(context);
 
     return Container(
       width: double.infinity,
@@ -26,7 +28,7 @@ class ExperienceSection extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Experience',
+                AppLocalizations.of(context)!.experience,
                 style: TextStyle(
                   fontSize: isDesktop ? 48 : (isMobile ? 32 : 36),
                   fontWeight: FontWeight.bold,
@@ -34,9 +36,9 @@ class ExperienceSection extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              const Text(
-                'My professional journey.',
-                style: TextStyle(fontSize: 18, color: AppColors.textSecondary),
+              Text(
+                AppLocalizations.of(context)!.experienceSubtitle,
+                style: const TextStyle(fontSize: 18, color: AppColors.textSecondary),
               ),
               SizedBox(height: isMobile ? 32 : 60),
               ListView.builder(

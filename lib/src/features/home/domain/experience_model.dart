@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:naji_portfolio/l10n/app_localizations.dart';
+
 class Experience {
   final String company;
   final String role;
@@ -14,32 +17,34 @@ class Experience {
     required this.description,
     required this.projects,
   });
+
+  static List<Experience> getExperiences(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    return [
+      Experience(
+        company: l10n.expCompanyBecom,
+        role: l10n.expRoleBecom,
+        duration: l10n.expDateBecom,
+        location: l10n.expLocBecom,
+        description: l10n.expDescBecom,
+        projects: ['Sanad Customer', 'Sanad Merchant (New)', 'Sanad Merchant (Legacy)'],
+      ),
+      Experience(
+        company: l10n.expCompanyEbtekar,
+        role: l10n.expRoleEbtekar,
+        duration: l10n.expDateEbtekar,
+        location: l10n.expLocEbtekar,
+        description: l10n.expDescEbtekar,
+        projects: ['Shin Aljaw', 'Lingo'],
+      ),
+      Experience(
+        company: l10n.expCompanyMIC,
+        role: l10n.expRoleMIC,
+        duration: l10n.expDateMIC,
+        location: l10n.expLocMIC,
+        description: l10n.expDescMIC,
+        projects: ['D-Maintenance', 'Office Anywhere'],
+      ),
+    ];
+  }
 }
-
-const List<Experience> experiences = [
-  Experience(
-    company: 'Becom بِكُمْ Company',
-    role: 'Flutter Engineer',
-    duration: 'March 2025 - Present',
-    location: 'Tripoli - Libya',
-    description: 'Becom is a Fin-Tech firm delivering integrated software solutions for payment and e-commerce. Full lifecycle development of mobile applications for Android and iOS, encompassing new application creation, feature implementation, and bug resolution in existing solutions.',
-    projects: ['Sanad Customer', 'Sanad Merchant (New)', 'Sanad Merchant (Legacy)'],
-  ),
-  Experience(
-    company: 'Ebtekar Information Systems Company',
-    role: 'Flutter Engineer',
-    duration: 'August 2023 - December 2024',
-    location: 'Tripoli - Libya',
-    description: 'Ebtekar Information Systems Company (EISC) is a full-service agency specializing in planning and delivering effective, innovative media and technology solutions for domestic and international clients. Full lifecycle development of mobile applications for Android and iOS.',
-    projects: ['Shin Aljaw', 'Lingo'],
-  ),
-  Experience(
-    company: 'Management Intelligence Company',
-    role: 'Flutter Engineer',
-    duration: 'November 2019 - March 2022',
-    location: 'Riyadh - Saudi Arabia',
-    description: 'Management Intelligence Company (MIC) is a startup software firm specializing in building web systems and mobile applications tailored for the Saudi market. Full lifecycle development of mobile applications and backend development contributions using ASP.NET Core Web API.',
-    projects: ['D-Maintenance', 'Office Anywhere'],
-  ),
-];
-
