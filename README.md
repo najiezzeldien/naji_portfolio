@@ -1,16 +1,36 @@
-# naji_portfolio
+# Naji Ezzeldien — Portfolio
 
-A new Flutter project.
+Personal portfolio website for **Naji Ezzeldien**, Mobile Applications Engineer.
 
-## Getting Started
+## Tech Stack
 
-This project is a starting point for a Flutter application.
+- **HTML5** — Semantic, accessible markup
+- **CSS3** — Custom properties, glassmorphism, responsive design, RTL support
+- **Vanilla JavaScript** — Scroll animations, i18n (English/Arabic), particles
 
-A few resources to get you started if this is your first Flutter project:
+## Features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- 🌙 Premium dark theme with glassmorphism effects
+- 🌐 Bilingual support (English / Arabic) with RTL layout
+- 📱 Fully responsive (mobile, tablet, desktop, 4K)
+- ✨ Scroll-reveal animations & particle effects
+- 🖨️ Print-optimized stylesheet
+- ⚡ Zero dependencies — pure HTML/CSS/JS
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Structure
+
+```
+├── index.html          # Main HTML
+├── css/style.css       # Design system & responsive styles
+├── js/main.js          # Interactions & animations
+├── js/i18n.js          # Translations (EN/AR)
+└── favicon.png         # Site icon
+```
+
+## Development
+
+Open `index.html` directly in any browser — no build step required.
+
+## License
+
+© 2026 Naji Ezzeldien. All rights reserved.

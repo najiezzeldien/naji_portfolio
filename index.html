@@ -1,84 +1,562 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en" dir="ltr">
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
-  <base href="/">
-
   <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
 
-  <!-- Critical for iOS Safari: Prevents zooming/shaking and white screen crashes -->
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <!-- SEO -->
+  <title>Naji Ezzeldien — Mobile Applications Engineer | Portfolio</title>
+  <meta name="description" content="Portfolio of Naji Ezzeldien — Mobile Applications Engineer with 4+ years of expertise. 7 published apps, 102,000+ downloads across Google Play, Apple App Store, and Sunmi Store.">
+  <meta name="keywords" content="Naji Ezzeldien, Flutter Developer, Mobile Engineer, Portfolio, Android, iOS, Apps">
+  <meta name="author" content="Naji Ezzeldien">
 
+  <!-- Open Graph -->
+  <meta property="og:title" content="Naji Ezzeldien — Mobile Applications Engineer">
+  <meta property="og:description" content="4+ years of expertise building high-performance mobile applications. 7 published apps, 102,000+ downloads.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://najiezzeldien.github.io/naji_portfolio/">
 
-
-  <!-- iOS meta tags & icons -->
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="naji_portfolio">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-  <!-- Critical iOS Safari Fixes -->
-  <style>
-    html {
-      height: 100%;
-      width: 100%;
-      overflow: hidden;
-    }
-
-    body {
-      /* Prevent rubber-banding/bouncing */
-      overscroll-behavior: none;
-      background-color: #0F172A;
-      /* Match App Background */
-
-      /* Force strict viewport size */
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-
-      /* Disable touch callouts */
-      -webkit-touch-callout: none;
-      -webkit-user-select: none;
-      user-select: none;
-    }
-
-    /* specific fix for flutter view */
-    #flutter_container {
-      width: 100%;
-      height: 100%;
-    }
-  </style>
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Naji Ezzeldien — Mobile Applications Engineer">
+  <meta name="twitter:description" content="4+ years of expertise building high-performance mobile applications.">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="icon" type="image/png" href="favicon.png">
 
-  <title>naji_portfolio</title>
-  <link rel="manifest" href="manifest.json">
+  <!-- Fonts: Preconnect for speed -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-  <script src="flutter_bootstrap.js" async></script>
-</body>
 
+  <!-- ═══════════════════════════════════════════════════════════
+       NAVBAR
+       ═══════════════════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">
+      <div class="nav-logo" data-i18n="nav.logo">N</div>
+      <span class="nav-title" data-i18n="nav.title">Naji.</span>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#hero" class="nav-link active" data-i18n="nav.home">Home</a>
+      <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
+      <a href="#experience" class="nav-link" data-i18n="nav.experience">Experience</a>
+      <a href="#education" class="nav-link" data-i18n="nav.education">Education</a>
+      <a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a>
+      <a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a>
+      <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+      <button class="lang-switch" id="langSwitch" onclick="toggleLanguage()">AR</button>
+    </div>
+
+    <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#hero" class="nav-link" data-i18n="nav.home" onclick="toggleMobileMenu()">Home</a>
+    <a href="#about" class="nav-link" data-i18n="nav.about" onclick="toggleMobileMenu()">About</a>
+    <a href="#experience" class="nav-link" data-i18n="nav.experience" onclick="toggleMobileMenu()">Experience</a>
+    <a href="#education" class="nav-link" data-i18n="nav.education" onclick="toggleMobileMenu()">Education</a>
+    <a href="#projects" class="nav-link" data-i18n="nav.projects" onclick="toggleMobileMenu()">Projects</a>
+    <a href="#skills" class="nav-link" data-i18n="nav.skills" onclick="toggleMobileMenu()">Skills</a>
+    <a href="#contact" class="nav-link" data-i18n="nav.contact" onclick="toggleMobileMenu()">Contact</a>
+    <button class="lang-switch" onclick="toggleLanguage()" data-i18n="nav.langSwitch">AR</button>
+  </div>
+
+  <main>
+    <!-- ═══════════════════════════════════════════════════════════
+         HERO SECTION
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="hero" id="hero">
+      <div class="hero-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+      </div>
+
+      <div class="hero-content">
+        <p class="hero-greeting reveal" data-i18n="hero.greeting">Hello, I am</p>
+        <h1 class="hero-name reveal reveal-delay-1" data-i18n="hero.name">Naji Ezzeldien</h1>
+        <h2 class="hero-title reveal reveal-delay-2">
+          <span data-i18n="hero.title">Mobile Applications Engineer</span>
+          <span class="typewriter-cursor"></span>
+        </h2>
+        <p class="hero-description reveal reveal-delay-3" data-i18n="hero.description">Building high-performance, scalable mobile applications with exceptional user experiences.</p>
+
+        <div class="hero-stats reveal reveal-delay-4">
+          <div class="stat-item">
+            <div class="stat-number">102K+</div>
+            <div class="stat-label" data-i18n="hero.downloads">Downloads</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">7</div>
+            <div class="stat-label" data-i18n="hero.apps">Published Apps</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">4+</div>
+            <div class="stat-label" data-i18n="hero.years">Years Experience</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         ABOUT SECTION
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="about" id="about">
+      <div class="about-content">
+        <h2 class="section-title reveal" data-i18n="about.title">About Me</h2>
+        <div class="section-divider reveal reveal-delay-1"></div>
+        <p class="about-description reveal reveal-delay-2" data-i18n="about.description">Highly driven Mobile Applications Engineer with over 4 years of expertise in crafting user-focused applications for both Android and iOS platforms utilizing cross-platform frameworks. I have successfully deployed 7 applications to Google Play, the Apple App Store, and the Sunmi store, accumulating over 102,000 downloads.</p>
+
+        <h3 class="strengths-title reveal reveal-delay-3" data-i18n="about.strengths">Core Strengths</h3>
+        <div class="strengths-list">
+          <div class="strength-item reveal reveal-delay-3" data-i18n="about.strength1">Developing scalable, secure, and maintainable mobile applications.</div>
+          <div class="strength-item reveal reveal-delay-4" data-i18n="about.strength2">Architecting solutions using Clean Architecture and Clean Code principles.</div>
+          <div class="strength-item reveal reveal-delay-4" data-i18n="about.strength3">Advanced state management (Riverpod, Bloc) and dependency injection patterns.</div>
+          <div class="strength-item reveal reveal-delay-5" data-i18n="about.strength4">Integrating complex features: payment gateways, Firebase services, real-time communication, hardware integration.</div>
+          <div class="strength-item reveal reveal-delay-5" data-i18n="about.strength5">Building responsive, localized applications with exceptional user experiences.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         EXPERIENCE SECTION
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="experience" id="experience">
+      <div class="experience-inner">
+        <h2 class="section-title reveal" data-i18n="exp.title">Experience</h2>
+        <p class="section-subtitle reveal reveal-delay-1" data-i18n="exp.subtitle">My professional journey.</p>
+
+        <div class="timeline">
+          <!-- Delmon Invest -->
+          <article class="timeline-item reveal">
+            <div class="timeline-header">
+              <h3 class="timeline-role" data-i18n="exp.role.delmon">Flutter Engineer</h3>
+              <span class="timeline-date" data-i18n="exp.date.delmon">Dec 2025 – Present</span>
+            </div>
+            <p class="timeline-company" data-i18n="exp.company.delmon">Delmon Invest · Saudi Arabia</p>
+            <p class="timeline-description" data-i18n="exp.desc.delmon">Delmon Invest is a forward-thinking investment firm driving digital innovation. Full lifecycle development and architecture of mobile applications, autonomously driving products from conception to cross-platform deployment.</p>
+            <div class="timeline-projects">
+              <span class="project-tag">Munasiq</span>
+              <span class="project-tag">Furas</span>
+            </div>
+          </article>
+
+          <!-- Becom -->
+          <article class="timeline-item reveal">
+            <div class="timeline-header">
+              <h3 class="timeline-role" data-i18n="exp.role.becom">Flutter Engineer</h3>
+              <span class="timeline-date" data-i18n="exp.date.becom">Mar 2025 – Present</span>
+            </div>
+            <p class="timeline-company" data-i18n="exp.company.becom">Becom بِكُمْ Company · Tripoli, Libya</p>
+            <p class="timeline-description" data-i18n="exp.desc.becom">Becom is a Fin-Tech firm delivering integrated software solutions for payment and e-commerce. Full lifecycle development of mobile applications for Android and iOS, encompassing new application creation, feature implementation, and bug resolution in existing solutions.</p>
+            <div class="timeline-projects">
+              <span class="project-tag">Albaraka Insurance</span>
+              <span class="project-tag">Sanad Customer</span>
+              <span class="project-tag">Sanad Merchant (New)</span>
+              <span class="project-tag">Sanad Merchant (Legacy)</span>
+            </div>
+          </article>
+
+          <!-- Ebtekar -->
+          <article class="timeline-item reveal">
+            <div class="timeline-header">
+              <h3 class="timeline-role" data-i18n="exp.role.ebtekar">Flutter Engineer</h3>
+              <span class="timeline-date" data-i18n="exp.date.ebtekar">Aug 2023 – Dec 2024</span>
+            </div>
+            <p class="timeline-company" data-i18n="exp.company.ebtekar">Ebtekar Information Systems Company · Tripoli, Libya</p>
+            <p class="timeline-description" data-i18n="exp.desc.ebtekar">Ebtekar Information Systems Company (EISC) is a full-service agency specializing in planning and delivering effective, innovative media and technology solutions for domestic and international clients. Full lifecycle development of mobile applications for Android and iOS.</p>
+            <div class="timeline-projects">
+              <span class="project-tag">Shin Aljaw</span>
+              <span class="project-tag">Lingo</span>
+            </div>
+          </article>
+
+          <!-- MIC -->
+          <article class="timeline-item reveal">
+            <div class="timeline-header">
+              <h3 class="timeline-role" data-i18n="exp.role.mic">Flutter Engineer</h3>
+              <span class="timeline-date" data-i18n="exp.date.mic">Nov 2019 – Mar 2022</span>
+            </div>
+            <p class="timeline-company" data-i18n="exp.company.mic">Management Intelligence Company · Riyadh, Saudi Arabia</p>
+            <p class="timeline-description" data-i18n="exp.desc.mic">Management Intelligence Company (MIC) is a startup software firm specializing in building web systems and mobile applications tailored for the Saudi market. Full lifecycle development of mobile applications and backend development contributions using ASP.NET Core Web API.</p>
+            <div class="timeline-projects">
+              <span class="project-tag">D-Maintenance</span>
+              <span class="project-tag">Office Anywhere</span>
+              <span class="project-tag">Backend (ASP.NET)</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         EDUCATION SECTION
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="education" id="education">
+      <div class="education-inner">
+        <h2 class="section-title reveal" data-i18n="edu.title">Education</h2>
+        <div class="section-divider reveal reveal-delay-1"></div>
+
+        <div class="education-cards">
+          <!-- Masters -->
+          <article class="edu-card reveal reveal-delay-2">
+            <div class="edu-header">
+              <h3 class="edu-degree">
+                <span class="edu-icon">🎓</span>
+                <span data-i18n="edu.master.degree">Master in Information Technology</span>
+              </h3>
+              <span class="edu-date" data-i18n="edu.master.date">October 2018</span>
+            </div>
+            <p class="edu-school" data-i18n="edu.master.school">University of Sciences and Technology, Omdurman, Sudan</p>
+            <p class="edu-description" data-i18n="edu.master.desc">Thesis focused on data mining in economics, involving collection and analysis of public opinions on the Sudanese economy from Twitter using RapidMiner Studio for data classification.</p>
+          </article>
+
+          <!-- Bachelors -->
+          <article class="edu-card reveal reveal-delay-3">
+            <div class="edu-header">
+              <h3 class="edu-degree">
+                <span class="edu-icon">🎓</span>
+                <span data-i18n="edu.bachelor.degree">Bachelor of Computer Sciences</span>
+              </h3>
+              <span class="edu-date" data-i18n="edu.bachelor.date">October 2015</span>
+            </div>
+            <p class="edu-school" data-i18n="edu.bachelor.school">University of Sciences and Technology, Omdurman, Sudan</p>
+            <p class="edu-description" data-i18n="edu.bachelor.desc">Final project: Developed an Android mobile application utilizing Java for secure voice calls over Wi-Fi Direct.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         PROJECTS SECTION
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="projects" id="projects">
+      <div class="projects-inner">
+        <h2 class="section-title reveal" data-i18n="proj.title">Featured Projects</h2>
+        <p class="section-subtitle reveal reveal-delay-1" data-i18n="proj.subtitle">A selection of apps I have built and shipped to production.</p>
+
+        <div class="projects-grid">
+
+          <!-- Munasiq -->
+          <article class="project-card reveal reveal-delay-1">
+            <div class="project-icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <h3 class="project-title" data-i18n="proj.munasiq.title">Munasiq</h3>
+            <p class="project-description" data-i18n="proj.munasiq.desc">Shared calendar & scheduling platform with real-time push notifications, advanced local scheduling, full Arabic/English localization, and cross-platform delivery (iOS, Android, Web).</p>
+            <div class="project-links">
+              <a href="https://apps.apple.com/us/app/منسق/id6758393913?l=ar" target="_blank" rel="noopener" class="store-btn" aria-label="Apple App Store">
+                <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.mic.sharedCalendar" target="_blank" rel="noopener" class="store-btn" aria-label="Google Play Store">
+                <svg viewBox="0 0 24 24"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.24-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm.91-.91L19.59 12l-1.87-2.21-2.27 2.27 2.27 2.15zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Furas -->
+          <article class="project-card reveal reveal-delay-2">
+            <div class="project-icon">
+              <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3 class="project-title" data-i18n="proj.furas.title">Furas</h3>
+            <p class="project-description" data-i18n="proj.furas.desc">Digital platform connecting charities, stores, and students for transparent support distribution. Full-stack: Flutter mobile + backend + admin portal. App Store compliant (Guideline 2.1).</p>
+            <div class="project-links">
+              <a href="https://apps.apple.com/sa/app/furas-%D9%81%D8%B1%D8%B5/id6759549173" target="_blank" rel="noopener" class="store-btn" aria-label="Apple App Store">
+                <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.mic.furas" target="_blank" rel="noopener" class="store-btn" aria-label="Google Play Store">
+                <svg viewBox="0 0 24 24"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.24-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm.91-.91L19.59 12l-1.87-2.21-2.27 2.27 2.27 2.15zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Albaraka Insurance -->
+          <article class="project-card reveal reveal-delay-3">
+            <div class="project-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="project-title" data-i18n="proj.albaraka.title">Albaraka Insurance</h3>
+            <p class="project-description" data-i18n="proj.albaraka.desc">Comprehensive insurance platform for Vehicle, Marine, and Travel policies. Features native FFI security (SSL pinning, XOR obfuscation), multi-payment gateways (Sadad, Adfali, Tadawul), and Firebase notifications.</p>
+            <div class="project-links">
+              <a href="https://apps.apple.com/us/app/البركة-للتأمين/id6755429999" target="_blank" rel="noopener" class="store-btn" aria-label="Apple App Store">
+                <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=ly.albaraka.insurancep" target="_blank" rel="noopener" class="store-btn" aria-label="Google Play Store">
+                <svg viewBox="0 0 24 24"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.24-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm.91-.91L19.59 12l-1.87-2.21-2.27 2.27 2.27 2.15zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Sanad Customer -->
+          <article class="project-card reveal reveal-delay-1">
+            <div class="project-icon">
+              <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </div>
+            <h3 class="project-title" data-i18n="proj.sanad.title">Sanad Customer</h3>
+            <p class="project-description" data-i18n="proj.sanad.desc">E-Commerce platform for digital recharge vouchers in Libya. Features payment gateway integration, wallet management, QR code generation, Gecol purchasing system, and real-time notifications.</p>
+            <div class="project-links">
+              <a href="https://apps.apple.com/us/app/سنـد/id6749844909" target="_blank" rel="noopener" class="store-btn" aria-label="Apple App Store">
+                <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=ly.becom.sanadcustomers&hl=en" target="_blank" rel="noopener" class="store-btn" aria-label="Google Play Store">
+                <svg viewBox="0 0 24 24"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.24-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm.91-.91L19.59 12l-1.87-2.21-2.27 2.27 2.27 2.15zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Sanad Merchant -->
+          <article class="project-card reveal reveal-delay-2">
+            <div class="project-icon">
+              <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3 class="project-title" data-i18n="proj.merchant.title">Sanad Merchant</h3>
+            <p class="project-description" data-i18n="proj.merchant.desc">Merchant app for selling and printing recharge vouchers. Integrated with Sunmi POS devices for native printing, WebSocket real-time streaming, and multi-payment gateway support (Moamalat, Tlync).</p>
+            <div class="project-links">
+              <!-- Sunmi Store only - no public links -->
+            </div>
+          </article>
+
+          <!-- Shin Aljaw -->
+          <article class="project-card reveal reveal-delay-3">
+            <div class="project-icon">
+              <svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+            </div>
+            <h3 class="project-title" data-i18n="proj.shin.title">Shin Aljaw</h3>
+            <p class="project-description" data-i18n="proj.shin.desc">Full-featured weather application with real-time conditions, trip planning, seasonal activity tracking (planting, harvesting), and detailed marine conditions for Libya.</p>
+            <div class="project-links">
+              <a href="https://apps.apple.com/us/app/%D8%B4%D9%86-%D8%A7%D9%84%D8%AC%D9%88/id6503896230?platform=iphone" target="_blank" rel="noopener" class="store-btn" aria-label="Apple App Store">
+                <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.ebtekar.shin_aljaw" target="_blank" rel="noopener" class="store-btn" aria-label="Google Play Store">
+                <svg viewBox="0 0 24 24"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.24-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm.91-.91L19.59 12l-1.87-2.21-2.27 2.27 2.27 2.15zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Lingo -->
+          <article class="project-card reveal reveal-delay-1">
+            <div class="project-icon">
+              <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <h3 class="project-title" data-i18n="proj.lingo.title">Lingo</h3>
+            <p class="project-description" data-i18n="proj.lingo.desc">Educational platform with live lesson broadcasting (audio & video) using Agora Interactive Live Streaming. Features real-time communication, multimedia playback, and personalized learning paths.</p>
+            <div class="project-links">
+              <a href="https://apps.apple.com/us/app/lingo-%D9%84%D9%8A%D9%86%D9%82%D9%88/id1559887910" target="_blank" rel="noopener" class="store-btn" aria-label="Apple App Store">
+                <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.ebtekar.lingo" target="_blank" rel="noopener" class="store-btn" aria-label="Google Play Store">
+                <svg viewBox="0 0 24 24"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.24-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm.91-.91L19.59 12l-1.87-2.21-2.27 2.27 2.27 2.15zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Office Anywhere -->
+          <article class="project-card reveal reveal-delay-2">
+            <div class="project-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </div>
+            <h3 class="project-title" data-i18n="proj.oanywhere.title">Office Anywhere</h3>
+            <p class="project-description" data-i18n="proj.oanywhere.desc">Internal utility application designed to streamline task management and communication across all company departments. Serving real estate companies in Saudi Arabia.</p>
+            <div class="project-links">
+              <a href="https://apps.apple.com/sa/app/o-anywhere/id1599979909?l=ar" target="_blank" rel="noopener" class="store-btn" aria-label="Apple App Store">
+                <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.mic.anyware" target="_blank" rel="noopener" class="store-btn" aria-label="Google Play Store">
+                <svg viewBox="0 0 24 24"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.24-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm.91-.91L19.59 12l-1.87-2.21-2.27 2.27 2.27 2.15zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- D-Maintenance -->
+          <article class="project-card reveal reveal-delay-3">
+            <div class="project-icon">
+              <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <h3 class="project-title" data-i18n="proj.dmaint.title">D-Maintenance</h3>
+            <p class="project-description" data-i18n="proj.dmaint.desc">Customer-focused mobile application enabling efficient submission of maintenance requests, feedback, suggestions, and service evaluations for real estate management.</p>
+            <div class="project-links">
+              <!-- Internal app -->
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SKILLS SECTION
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="skills" id="skills">
+      <div class="skills-inner">
+        <h2 class="section-title reveal" data-i18n="skills.title">Skills</h2>
+        <div class="section-divider reveal reveal-delay-1" style="margin: 0 auto 48px;"></div>
+
+        <!-- Languages -->
+        <div class="skills-category reveal reveal-delay-1">
+          <h3 class="skills-category-title" data-i18n="skills.cat.languages">Languages</h3>
+          <div class="skills-wrap">
+            <span class="skill-chip">Dart</span>
+            <span class="skill-chip">Java</span>
+            <span class="skill-chip">C#</span>
+            <span class="skill-chip">C++</span>
+          </div>
+        </div>
+
+        <!-- Frameworks -->
+        <div class="skills-category reveal reveal-delay-2">
+          <h3 class="skills-category-title" data-i18n="skills.cat.frameworks">Frameworks & Libraries</h3>
+          <div class="skills-wrap">
+            <span class="skill-chip">Flutter</span>
+            <span class="skill-chip">ASP.NET Web API</span>
+          </div>
+        </div>
+
+        <!-- State Management -->
+        <div class="skills-category reveal reveal-delay-2">
+          <h3 class="skills-category-title" data-i18n="skills.cat.state">State Management</h3>
+          <div class="skills-wrap">
+            <span class="skill-chip">Riverpod</span>
+            <span class="skill-chip">Bloc</span>
+            <span class="skill-chip">Provider</span>
+            <span class="skill-chip">GetX</span>
+          </div>
+        </div>
+
+        <!-- Core Concepts -->
+        <div class="skills-category reveal reveal-delay-3">
+          <h3 class="skills-category-title" data-i18n="skills.cat.core">Core Concepts</h3>
+          <div class="skills-wrap">
+            <span class="skill-chip" data-i18n="skills.oop">OOP</span>
+            <span class="skill-chip" data-i18n="skills.ood">OOD</span>
+            <span class="skill-chip" data-i18n="skills.solid">SOLID Principles</span>
+            <span class="skill-chip" data-i18n="skills.patterns">Design Patterns</span>
+            <span class="skill-chip" data-i18n="skills.ds">Data Structures</span>
+            <span class="skill-chip" data-i18n="skills.algo">Algorithms</span>
+          </div>
+        </div>
+
+        <!-- Architecture & Practices -->
+        <div class="skills-category reveal reveal-delay-3">
+          <h3 class="skills-category-title" data-i18n="skills.cat.arch">Architecture & Practices</h3>
+          <div class="skills-wrap">
+            <span class="skill-chip" data-i18n="skills.cleanArch">Clean Architecture</span>
+            <span class="skill-chip" data-i18n="skills.cleanCode">Clean Code</span>
+            <span class="skill-chip">MVVM</span>
+            <span class="skill-chip">TDD</span>
+            <span class="skill-chip">Agile / Scrum</span>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skills-category reveal reveal-delay-4">
+          <h3 class="skills-category-title" data-i18n="skills.cat.tools">Tools & Platforms</h3>
+          <div class="skills-wrap">
+            <span class="skill-chip">Git</span>
+            <span class="skill-chip">GitHub</span>
+            <span class="skill-chip">CI/CD</span>
+            <span class="skill-chip">Firebase</span>
+            <span class="skill-chip">Dio</span>
+            <span class="skill-chip">GoRouter</span>
+          </div>
+        </div>
+
+        <!-- Advanced Features -->
+        <div class="skills-category reveal reveal-delay-5">
+          <h3 class="skills-category-title" data-i18n="skills.cat.advanced">Advanced Features</h3>
+          <div class="skills-wrap">
+            <span class="skill-chip" data-i18n="skills.payment">Payment Gateway Integration</span>
+            <span class="skill-chip" data-i18n="skills.hardware">Hardware Integration</span>
+            <span class="skill-chip" data-i18n="skills.realtime">Real-time Communication</span>
+            <span class="skill-chip" data-i18n="skills.push">Push Notifications</span>
+            <span class="skill-chip" data-i18n="skills.responsive">Responsive UI Design</span>
+            <span class="skill-chip" data-i18n="skills.l10n">Localization</span>
+            <span class="skill-chip" data-i18n="skills.qr">QR Code Generation/Scanning</span>
+            <span class="skill-chip" data-i18n="skills.ffi">Native FFI Security</span>
+          </div>
+        </div>
+
+        <!-- AI -->
+        <div class="skills-category reveal reveal-delay-5">
+          <h3 class="skills-category-title" data-i18n="skills.cat.ai">AI & Productivity</h3>
+          <div class="skills-wrap">
+            <span class="skill-chip">Gemini</span>
+            <span class="skill-chip">GitHub Copilot</span>
+            <span class="skill-chip">Cursor</span>
+            <span class="skill-chip" data-i18n="skills.prompt">Prompt Engineering</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         CONTACT SECTION
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="contact" id="contact">
+      <div class="contact-inner">
+        <h2 class="section-title reveal" data-i18n="contact.title">Get in Touch</h2>
+        <p class="section-subtitle reveal reveal-delay-1" data-i18n="contact.subtitle">Have a project in mind? Let's work together.</p>
+
+        <div class="social-links reveal reveal-delay-2">
+          <!-- Email -->
+          <a href="mailto:aboalnaja10@gmail.com" class="social-btn" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+            <span data-i18n="contact.email">Email</span>
+          </a>
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/najiezzeldien" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <!-- GitHub -->
+          <a href="https://github.com/najiezzeldien" target="_blank" rel="noopener" class="social-btn" aria-label="GitHub">
+            <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            <span>GitHub</span>
+          </a>
+          <!-- Phone -->
+          <a href="tel:+966500122768" class="social-btn" aria-label="Phone">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span data-i18n="contact.phone">Phone</span>
+          </a>
+        </div>
+
+        <!-- Languages -->
+        <div class="languages reveal reveal-delay-3">
+          <span class="lang-badge" data-i18n="contact.lang.en">🇬🇧 English — Professional Working Proficiency</span>
+          <span class="lang-badge" data-i18n="contact.lang.ar">🇸🇦 Arabic — Native / Bilingual Proficiency</span>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer reveal reveal-delay-4">
+          <p class="footer-text" data-i18n="contact.copyright">© 2026 Naji Ezzeldien. All rights reserved.</p>
+          <p class="footer-references" data-i18n="contact.references">References available upon request.</p>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
 </html>
