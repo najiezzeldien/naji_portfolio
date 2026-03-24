@@ -1124,8 +1124,8 @@ button {
 
   .hero-stats {
     flex-direction: row;
-    gap: 20px;
-    padding: 12px 24px;
+    gap: 24px;
+    padding: 14px 28px;
   }
 
   .stat-number {
@@ -1178,17 +1178,29 @@ button {
   }
 
   .hero-stats {
-    flex-direction: column;
-    gap: 12px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 24px;
     width: 100%;
-    max-width: 260px;
+    max-width: 340px;
+    padding: 16px 20px;
   }
 
   .stat-item {
     display: flex;
-    align-items: center;
-    gap: 8px;
+    align-items: baseline;
+    gap: 6px;
     text-align: left;
+    min-width: 0;
+  }
+
+  .stat-number {
+    font-size: 18px;
+  }
+
+  .stat-label {
+    font-size: 12px;
   }
 
   .about,
