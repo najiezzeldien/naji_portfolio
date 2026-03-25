@@ -28,7 +28,7 @@
 
   /* Gradients */
   --gradient-primary: linear-gradient(135deg, #10B981, #3B82F6);
-  --gradient-hero: linear-gradient(135deg, #0A0F1C 0%, #112240 50%, #0A192F 100%);
+  --gradient-hero: radial-gradient(ellipse at 50% 50%, #112240 0%, #0A192F 50%, #0A0F1C 100%);
   --gradient-section: linear-gradient(180deg, transparent, rgba(16, 185, 129, 0.03), transparent);
 
   /* Glass */
@@ -84,6 +84,7 @@ body {
   font-family: var(--font-primary);
   background: var(--gradient-hero);
   background-attachment: fixed;
+  background-size: cover;
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
