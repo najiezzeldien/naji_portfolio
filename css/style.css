@@ -616,7 +616,7 @@ button {
    ============================================================ */
 .experience {
   padding: 100px 24px;
-  background: var(--gradient-section);
+  border-top: 1px solid var(--glass-border);
 }
 
 .experience-inner {
@@ -815,7 +815,7 @@ button {
    ============================================================ */
 .projects {
   padding: 100px 24px;
-  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid var(--glass-border);
 }
 
 .projects-inner {
