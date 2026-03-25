@@ -995,7 +995,7 @@ button {
    ============================================================ */
 .contact {
   padding: 100px 24px;
-  background: rgba(0, 0, 0, 0.3);
+  border-top: 1px solid var(--glass-border);
   text-align: center;
 }
 
