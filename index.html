@@ -51,7 +51,7 @@
       <a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a>
       <a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a>
       <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
-      <button class="lang-switch" id="langSwitch" onclick="toggleLanguage()">AR</button>
+      <button class="lang-switch" id="langSwitch" onclick="toggleLanguage()" data-i18n="nav.langSwitch">AR</button>
     </div>
 
     <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
@@ -156,10 +156,10 @@
             <p class="timeline-company" data-i18n="exp.company.delmon">Delmon Invest · Saudi Arabia</p>
             <p class="timeline-description" data-i18n="exp.desc.delmon">Delmon Invest is a forward-thinking investment firm driving digital innovation. Full lifecycle development and architecture of mobile applications, autonomously driving products from conception to cross-platform deployment.</p>
             <div class="timeline-projects">
-              <span class="project-tag">O-Anywhere</span>
-              <span class="project-tag">Home Secretary</span>
-              <span class="project-tag">Munasiq</span>
-              <span class="project-tag">Furas</span>
+              <a href="#proj-oanywhere" class="project-tag">O-Anywhere</a>
+              <a href="#proj-homesecretary" class="project-tag">Home Secretary</a>
+              <a href="#proj-munasiq" class="project-tag">Munasiq</a>
+              <a href="#proj-furas" class="project-tag">Furas</a>
             </div>
           </article>
 
@@ -172,11 +172,11 @@
             <p class="timeline-company" data-i18n="exp.company.becom">Becom بِكُمْ Company · Tripoli, Libya</p>
             <p class="timeline-description" data-i18n="exp.desc.becom">Becom is a Fin-Tech firm delivering integrated software solutions for payment and e-commerce. Full lifecycle development of mobile applications for Android and iOS, encompassing new application creation, feature implementation, and bug resolution in existing solutions.</p>
             <div class="timeline-projects">
-              <span class="project-tag">Albaraka Insurance</span>
-              <span class="project-tag">Sanad Customer</span>
-              <span class="project-tag">Sanad Agent</span>
-              <span class="project-tag">Sanad Merchant (New)</span>
-              <span class="project-tag">Sanad Merchant (Legacy)</span>
+              <a href="#proj-albaraka" class="project-tag">Albaraka Insurance</a>
+              <a href="#proj-sanad" class="project-tag">Sanad Customer</a>
+              <a href="#proj-sanadagent" class="project-tag">Sanad Agent</a>
+              <a href="#proj-merchant" class="project-tag">Sanad Merchant (New)</a>
+              <a href="#proj-merchant" class="project-tag">Sanad Merchant (Legacy)</a>
             </div>
           </article>
 
@@ -189,8 +189,8 @@
             <p class="timeline-company" data-i18n="exp.company.ebtekar">Ebtekar Information Systems Company · Tripoli, Libya</p>
             <p class="timeline-description" data-i18n="exp.desc.ebtekar">Ebtekar Information Systems Company (EISC) is a full-service agency specializing in planning and delivering effective, innovative media and technology solutions for domestic and international clients. Full lifecycle development of mobile applications for Android and iOS.</p>
             <div class="timeline-projects">
-              <span class="project-tag">Shin Aljaw</span>
-              <span class="project-tag">Lingo</span>
+              <a href="#proj-shin" class="project-tag">Shin Aljaw</a>
+              <a href="#proj-lingo" class="project-tag">Lingo</a>
             </div>
           </article>
 
@@ -203,8 +203,8 @@
             <p class="timeline-company" data-i18n="exp.company.mic">Management Intelligence Company · Riyadh, Saudi Arabia</p>
             <p class="timeline-description" data-i18n="exp.desc.mic">Management Intelligence Company (MIC) is a startup software firm specializing in building web systems and mobile applications tailored for the Saudi market. Full lifecycle development of mobile applications and backend development contributions using ASP.NET Core Web API.</p>
             <div class="timeline-projects">
-              <span class="project-tag">D-Maintenance</span>
-              <span class="project-tag">Office Anywhere</span>
+              <a href="#proj-dmaint" class="project-tag">D-Maintenance</a>
+              <a href="#proj-oanywhere" class="project-tag">Office Anywhere</a>
               <span class="project-tag">Backend (ASP.NET)</span>
             </div>
           </article>
@@ -261,179 +261,203 @@
         <div class="projects-grid">
 
           <!-- Home Secretary -->
-          <article class="project-card reveal reveal-delay-1">
+          <article class="project-card reveal reveal-delay-1" id="proj-homesecretary">
             <div class="project-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
             </div>
             <h3 class="project-title" data-i18n="proj.homesecretary.title">Home Secretary</h3>
             <p class="project-description" data-i18n="proj.homesecretary.desc">Smart household management & scheduling platform with speech-to-text, async background task execution, Lottie animations, and cross-platform deployment.</p>
             <div class="project-links">
-              <a href="https://apps.apple.com/us/app/%D8%A7%D9%84%D8%B3%D9%83%D8%B1%D8%AA%D9%8A%D8%B1-%D8%A7%D9%84%D9%85%D9%86%D8%B2%D9%84%D9%8A/id6807824158" target="_blank" rel="noopener" class="store-btn" aria-label="Apple App Store">
+              <a href="https://apps.apple.com/us/app/%D8%A7%D9%84%D8%B3%D9%83%D8%B1%D8%AA%D9%8A%D8%B1-%D8%A7%D9%84%D9%85%D9%86%D8%B2%D9%84%D9%8A/id6807824158" target="_blank" rel="noopener noreferrer" class="store-btn store-btn-apple" aria-label="Apple App Store">
                 <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                <span class="store-btn-label" data-i18n="store.apple">App Store</span>
               </a>
-              <a href="https://play.google.com/store/apps/details?id=com.mic.home_secretary" target="_blank" rel="noopener" class="store-btn" aria-label="Google Play Store">
+              <a href="https://play.google.com/store/apps/details?id=com.mic.home_secretary" target="_blank" rel="noopener noreferrer" class="store-btn store-btn-play" aria-label="Google Play Store">
                 <svg viewBox="0 0 24 24"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.24-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm.91-.91L19.59 12l-1.87-2.21-2.27 2.27 2.27 2.15zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+                <span class="store-btn-label" data-i18n="store.google">Google Play</span>
               </a>
             </div>
           </article>
 
           <!-- Munasiq -->
-          <article class="project-card reveal reveal-delay-2">
+          <article class="project-card reveal reveal-delay-2" id="proj-munasiq">
             <div class="project-icon">
               <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
             </div>
             <h3 class="project-title" data-i18n="proj.munasiq.title">Munasiq</h3>
             <p class="project-description" data-i18n="proj.munasiq.desc">Shared calendar & scheduling platform with real-time push notifications, advanced local scheduling, full Arabic/English localization, and cross-platform delivery (iOS, Android, Web).</p>
             <div class="project-links">
-              <a href="https://apps.apple.com/us/app/منسق/id6758393913?l=ar" target="_blank" rel="noopener" class="store-btn" aria-label="Apple App Store">
+              <a href="https://apps.apple.com/us/app/منسق/id6758393913?l=ar" target="_blank" rel="noopener noreferrer" class="store-btn store-btn-apple" aria-label="Apple App Store">
                 <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                <span class="store-btn-label" data-i18n="store.apple">App Store</span>
               </a>
-              <a href="https://play.google.com/store/apps/details?id=com.mic.sharedCalendar" target="_blank" rel="noopener" class="store-btn" aria-label="Google Play Store">
+              <a href="https://play.google.com/store/apps/details?id=com.mic.sharedCalendar" target="_blank" rel="noopener noreferrer" class="store-btn store-btn-play" aria-label="Google Play Store">
                 <svg viewBox="0 0 24 24"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.24-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm.91-.91L19.59 12l-1.87-2.21-2.27 2.27 2.27 2.15zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+                <span class="store-btn-label" data-i18n="store.google">Google Play</span>
               </a>
             </div>
           </article>
 
           <!-- Furas -->
-          <article class="project-card reveal reveal-delay-3">
+          <article class="project-card reveal reveal-delay-3" id="proj-furas">
             <div class="project-icon">
               <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
             </div>
             <h3 class="project-title" data-i18n="proj.furas.title">Furas</h3>
             <p class="project-description" data-i18n="proj.furas.desc">Digital platform connecting charities, stores, and students for transparent support distribution. Full-stack: Flutter mobile + backend + admin portal. App Store compliant (Guideline 2.1).</p>
             <div class="project-links">
-              <a href="https://apps.apple.com/sa/app/furas-%D9%81%D8%B1%D8%B5/id6759549173" target="_blank" rel="noopener" class="store-btn" aria-label="Apple App Store">
+              <a href="https://apps.apple.com/sa/app/furas-%D9%81%D8%B1%D8%B5/id6759549173" target="_blank" rel="noopener noreferrer" class="store-btn store-btn-apple" aria-label="Apple App Store">
                 <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                <span class="store-btn-label" data-i18n="store.apple">App Store</span>
               </a>
-              <a href="https://play.google.com/store/apps/details?id=com.mic.furas" target="_blank" rel="noopener" class="store-btn" aria-label="Google Play Store">
+              <a href="https://play.google.com/store/apps/details?id=com.mic.furas" target="_blank" rel="noopener noreferrer" class="store-btn store-btn-play" aria-label="Google Play Store">
                 <svg viewBox="0 0 24 24"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.24-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm.91-.91L19.59 12l-1.87-2.21-2.27 2.27 2.27 2.15zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+                <span class="store-btn-label" data-i18n="store.google">Google Play</span>
               </a>
             </div>
           </article>
 
           <!-- Albaraka Insurance -->
-          <article class="project-card reveal reveal-delay-1">
+          <article class="project-card reveal reveal-delay-1" id="proj-albaraka">
             <div class="project-icon">
               <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
             <h3 class="project-title" data-i18n="proj.albaraka.title">Albaraka Insurance</h3>
             <p class="project-description" data-i18n="proj.albaraka.desc">Comprehensive insurance platform for Vehicle, Marine, and Travel policies. Features native FFI security (SSL pinning, XOR obfuscation), multi-payment gateways (Sadad, Adfali, Tadawul), and Firebase notifications.</p>
             <div class="project-links">
-              <a href="https://apps.apple.com/us/app/البركة-للتأمين/id6755429999" target="_blank" rel="noopener" class="store-btn" aria-label="Apple App Store">
+              <a href="https://apps.apple.com/us/app/البركة-للتأمين/id6755429999" target="_blank" rel="noopener noreferrer" class="store-btn store-btn-apple" aria-label="Apple App Store">
                 <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                <span class="store-btn-label" data-i18n="store.apple">App Store</span>
               </a>
-              <a href="https://play.google.com/store/apps/details?id=ly.albaraka.insurancep" target="_blank" rel="noopener" class="store-btn" aria-label="Google Play Store">
+              <a href="https://play.google.com/store/apps/details?id=ly.albaraka.insurancep" target="_blank" rel="noopener noreferrer" class="store-btn store-btn-play" aria-label="Google Play Store">
                 <svg viewBox="0 0 24 24"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.24-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm.91-.91L19.59 12l-1.87-2.21-2.27 2.27 2.27 2.15zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+                <span class="store-btn-label" data-i18n="store.google">Google Play</span>
               </a>
             </div>
           </article>
 
           <!-- Sanad Customer -->
-          <article class="project-card reveal reveal-delay-2">
+          <article class="project-card reveal reveal-delay-2" id="proj-sanad">
             <div class="project-icon">
               <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
             </div>
             <h3 class="project-title" data-i18n="proj.sanad.title">Sanad Customer</h3>
             <p class="project-description" data-i18n="proj.sanad.desc">E-Commerce platform for digital recharge vouchers in Libya. Features payment gateway integration, wallet management, QR code generation, Gecol purchasing system, and real-time notifications.</p>
             <div class="project-links">
-              <a href="https://apps.apple.com/us/app/سنـد/id6749844909" target="_blank" rel="noopener" class="store-btn" aria-label="Apple App Store">
+              <a href="https://apps.apple.com/us/app/سنـد/id6749844909" target="_blank" rel="noopener noreferrer" class="store-btn store-btn-apple" aria-label="Apple App Store">
                 <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                <span class="store-btn-label" data-i18n="store.apple">App Store</span>
               </a>
-              <a href="https://play.google.com/store/apps/details?id=ly.becom.sanadcustomers&hl=en" target="_blank" rel="noopener" class="store-btn" aria-label="Google Play Store">
+              <a href="https://play.google.com/store/apps/details?id=ly.becom.sanadcustomers&hl=en" target="_blank" rel="noopener noreferrer" class="store-btn store-btn-play" aria-label="Google Play Store">
                 <svg viewBox="0 0 24 24"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.24-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm.91-.91L19.59 12l-1.87-2.21-2.27 2.27 2.27 2.15zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+                <span class="store-btn-label" data-i18n="store.google">Google Play</span>
               </a>
             </div>
           </article>
 
           <!-- Sanad Agent -->
-          <article class="project-card reveal reveal-delay-3">
+          <article class="project-card reveal reveal-delay-3" id="proj-sanadagent">
             <div class="project-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
             </div>
             <h3 class="project-title" data-i18n="proj.sanadagent.title">Sanad Agent</h3>
             <p class="project-description" data-i18n="proj.sanadagent.desc">Agent verification and high-speed QR ticket scanning platform with mobile camera integration, manual entry fallback, and native C FFI security protection.</p>
             <div class="project-links">
-              <a href="https://apps.apple.com/us/app/سند-العميل/id6761775476" target="_blank" rel="noopener" class="store-btn" aria-label="Apple App Store">
+              <a href="https://apps.apple.com/us/app/سند-العميل/id6761775476" target="_blank" rel="noopener noreferrer" class="store-btn store-btn-apple" aria-label="Apple App Store">
                 <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                <span class="store-btn-label" data-i18n="store.apple">App Store</span>
               </a>
-              <a href="https://play.google.com/store/apps/details?id=ly.becom.sanadCompany" target="_blank" rel="noopener" class="store-btn" aria-label="Google Play Store">
+              <a href="https://play.google.com/store/apps/details?id=ly.becom.sanadCompany" target="_blank" rel="noopener noreferrer" class="store-btn store-btn-play" aria-label="Google Play Store">
                 <svg viewBox="0 0 24 24"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.24-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm.91-.91L19.59 12l-1.87-2.21-2.27 2.27 2.27 2.15zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+                <span class="store-btn-label" data-i18n="store.google">Google Play</span>
               </a>
             </div>
           </article>
 
           <!-- Sanad Merchant -->
-          <article class="project-card reveal reveal-delay-1">
+          <article class="project-card reveal reveal-delay-1" id="proj-merchant">
             <div class="project-icon">
               <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
             </div>
             <h3 class="project-title" data-i18n="proj.merchant.title">Sanad Merchant</h3>
             <p class="project-description" data-i18n="proj.merchant.desc">Merchant app for selling and printing recharge vouchers. Integrated with Sunmi POS devices for native printing, WebSocket real-time streaming, and multi-payment gateway support (Moamalat, Tlync).</p>
             <div class="project-links">
-              <!-- Sunmi Store only - no public links -->
+              <span class="store-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                <span data-i18n="store.pos">Sunmi POS Store</span>
+              </span>
             </div>
           </article>
 
           <!-- Shin Aljaw -->
-          <article class="project-card reveal reveal-delay-3">
+          <article class="project-card reveal reveal-delay-3" id="proj-shin">
             <div class="project-icon">
               <svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
             </div>
             <h3 class="project-title" data-i18n="proj.shin.title">Shin Aljaw</h3>
             <p class="project-description" data-i18n="proj.shin.desc">Full-featured weather application with real-time conditions, trip planning, seasonal activity tracking (planting, harvesting), and detailed marine conditions for Libya.</p>
             <div class="project-links">
-              <a href="https://apps.apple.com/us/app/%D8%B4%D9%86-%D8%A7%D9%84%D8%AC%D9%88/id6503896230?platform=iphone" target="_blank" rel="noopener" class="store-btn" aria-label="Apple App Store">
+              <a href="https://apps.apple.com/us/app/%D8%B4%D9%86-%D8%A7%D9%84%D8%AC%D9%88/id6503896230?platform=iphone" target="_blank" rel="noopener noreferrer" class="store-btn store-btn-apple" aria-label="Apple App Store">
                 <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                <span class="store-btn-label" data-i18n="store.apple">App Store</span>
               </a>
-              <a href="https://play.google.com/store/apps/details?id=com.ebtekar.shin_aljaw" target="_blank" rel="noopener" class="store-btn" aria-label="Google Play Store">
+              <a href="https://play.google.com/store/apps/details?id=com.ebtekar.shin_aljaw" target="_blank" rel="noopener noreferrer" class="store-btn store-btn-play" aria-label="Google Play Store">
                 <svg viewBox="0 0 24 24"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.24-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm.91-.91L19.59 12l-1.87-2.21-2.27 2.27 2.27 2.15zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+                <span class="store-btn-label" data-i18n="store.google">Google Play</span>
               </a>
             </div>
           </article>
 
           <!-- Lingo -->
-          <article class="project-card reveal reveal-delay-1">
+          <article class="project-card reveal reveal-delay-1" id="proj-lingo">
             <div class="project-icon">
               <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
             </div>
             <h3 class="project-title" data-i18n="proj.lingo.title">Lingo</h3>
             <p class="project-description" data-i18n="proj.lingo.desc">Educational platform with live lesson broadcasting (audio & video) using Agora Interactive Live Streaming. Features real-time communication, multimedia playback, and personalized learning paths.</p>
             <div class="project-links">
-              <a href="https://apps.apple.com/us/app/lingo-%D9%84%D9%8A%D9%86%D9%82%D9%88/id1559887910" target="_blank" rel="noopener" class="store-btn" aria-label="Apple App Store">
+              <a href="https://apps.apple.com/us/app/lingo-%D9%84%D9%8A%D9%86%D9%82%D9%88/id1559887910" target="_blank" rel="noopener noreferrer" class="store-btn store-btn-apple" aria-label="Apple App Store">
                 <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                <span class="store-btn-label" data-i18n="store.apple">App Store</span>
               </a>
-              <a href="https://play.google.com/store/apps/details?id=com.ebtekar.lingo" target="_blank" rel="noopener" class="store-btn" aria-label="Google Play Store">
+              <a href="https://play.google.com/store/apps/details?id=com.ebtekar.lingo" target="_blank" rel="noopener noreferrer" class="store-btn store-btn-play" aria-label="Google Play Store">
                 <svg viewBox="0 0 24 24"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.24-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm.91-.91L19.59 12l-1.87-2.21-2.27 2.27 2.27 2.15zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+                <span class="store-btn-label" data-i18n="store.google">Google Play</span>
               </a>
             </div>
           </article>
 
           <!-- Office Anywhere -->
-          <article class="project-card reveal reveal-delay-2">
+          <article class="project-card reveal reveal-delay-2" id="proj-oanywhere">
             <div class="project-icon">
               <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
             </div>
             <h3 class="project-title" data-i18n="proj.oanywhere.title">Office Anywhere</h3>
             <p class="project-description" data-i18n="proj.oanywhere.desc">Internal utility application designed to streamline task management and communication across all company departments. Serving real estate companies in Saudi Arabia.</p>
             <div class="project-links">
-              <a href="https://apps.apple.com/sa/app/o-anywhere/id1599979909?l=ar" target="_blank" rel="noopener" class="store-btn" aria-label="Apple App Store">
+              <a href="https://apps.apple.com/sa/app/o-anywhere/id1599979909?l=ar" target="_blank" rel="noopener noreferrer" class="store-btn store-btn-apple" aria-label="Apple App Store">
                 <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                <span class="store-btn-label" data-i18n="store.apple">App Store</span>
               </a>
-              <a href="https://play.google.com/store/apps/details?id=com.mic.anyware" target="_blank" rel="noopener" class="store-btn" aria-label="Google Play Store">
+              <a href="https://play.google.com/store/apps/details?id=com.mic.anyware" target="_blank" rel="noopener noreferrer" class="store-btn store-btn-play" aria-label="Google Play Store">
                 <svg viewBox="0 0 24 24"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.24-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm.91-.91L19.59 12l-1.87-2.21-2.27 2.27 2.27 2.15zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+                <span class="store-btn-label" data-i18n="store.google">Google Play</span>
               </a>
             </div>
           </article>
 
           <!-- D-Maintenance -->
-          <article class="project-card reveal reveal-delay-3">
+          <article class="project-card reveal reveal-delay-3" id="proj-dmaint">
             <div class="project-icon">
               <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
             </div>
             <h3 class="project-title" data-i18n="proj.dmaint.title">D-Maintenance</h3>
             <p class="project-description" data-i18n="proj.dmaint.desc">Customer-focused mobile application enabling efficient submission of maintenance requests, feedback, suggestions, and service evaluations for real estate management.</p>
             <div class="project-links">
-              <!-- Internal app -->
+              <span class="store-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span data-i18n="store.internal">Enterprise Internal</span>
+              </span>
             </div>
           </article>
 

@@ -121,6 +121,12 @@ const translations = {
     "skills.ffi": "Native FFI Security",
     "skills.prompt": "Prompt Engineering",
 
+    // Store Button Labels
+    "store.apple": "App Store",
+    "store.google": "Google Play",
+    "store.pos": "Sunmi POS Store",
+    "store.internal": "Enterprise Internal",
+
     // Contact
     "contact.title": "Get in Touch",
     "contact.subtitle": "Have a project in mind? Let's work together.",
@@ -249,6 +255,12 @@ const translations = {
     "skills.qr": "توليد/مسح QR Code",
     "skills.ffi": "أمان FFI الأصلي",
     "skills.prompt": "هندسة الأوامر",
+
+    // Store Button Labels
+    "store.apple": "App Store",
+    "store.google": "Google Play",
+    "store.pos": "متجر Sunmi POS",
+    "store.internal": "تطبيق داخلي",
 
     // Contact
     "contact.title": "تواصل معي",

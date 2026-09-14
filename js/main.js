@@ -82,11 +82,39 @@ function initNavbar() {
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-      e.preventDefault();
       const targetId = this.getAttribute('href');
+      if (!targetId || targetId === '#') return;
+
       const target = document.querySelector(targetId);
       if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        e.preventDefault();
+
+        // If mobile menu is open, close it
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileMenu && mobileMenu.classList.contains('open')) {
+          toggleMobileMenu();
+        }
+
+        // Account for fixed navbar offset
+        const navbar = document.getElementById('navbar');
+        const navHeight = navbar ? navbar.offsetHeight : 70;
+        const targetRect = target.getBoundingClientRect();
+        const targetPosition = targetRect.top + window.pageYOffset - navHeight - 16;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+
+        // If navigating to a project card, add a highlight glow
+        if (target.classList.contains('project-card')) {
+          target.classList.remove('highlight-target');
+          void target.offsetWidth; // Trigger reflow
+          target.classList.add('highlight-target');
+          setTimeout(() => {
+            target.classList.remove('highlight-target');
+          }, 2000);
+        }
       }
     });
   });
