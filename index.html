@@ -129,11 +129,11 @@
 
         <h3 class="strengths-title reveal reveal-delay-3" data-i18n="about.strengths">Core Strengths</h3>
         <div class="strengths-list">
-          <div class="strength-item reveal reveal-delay-3" data-i18n="about.strength1">End-to-end mobile and backend engineering using Flutter, ASP.NET Core Web API, and SQL Server under Clean Architecture.</div>
-          <div class="strength-item reveal reveal-delay-4" data-i18n="about.strength2">Predictable state management and modular dependency injection (Riverpod, Bloc/Cubit, Provider, GetX, get_it/Injectable).</div>
-          <div class="strength-item reveal reveal-delay-4" data-i18n="about.strength3">Client-side mobile hardening: Dart FFI (C/C++) secret obfuscation, SSL certificate pinning, biometrics, and root/jailbreak checks.</div>
-          <div class="strength-item reveal reveal-delay-5" data-i18n="about.strength4">Complex integrations: payment gateways, Sunmi POS thermal printers (Native Java), Agora live streaming, and WebSockets.</div>
-          <div class="strength-item reveal reveal-delay-5" data-i18n="about.strength5">Platform-level debugging, Android NDK (16KB page alignment), lifecycle stability, and full Arabic/English (RTL/LTR) localization.</div>
+          <div class="strength-item reveal reveal-delay-3" data-i18n="about.strength1">End-to-end mobile and backend engineering using Flutter, ASP.NET Core (.NET 10, CQRS/MediatR), EF Core, and SQL Server under Clean Architecture.</div>
+          <div class="strength-item reveal reveal-delay-4" data-i18n="about.strength2">Predictable state management and modular dependency injection (Riverpod, Bloc/Cubit, Provider, GetX, Freezed, get_it/Injectable).</div>
+          <div class="strength-item reveal reveal-delay-4" data-i18n="about.strength3">Mobile &amp; backend security: Dart FFI (C/C++) secret obfuscation, SSL pinning, AES-256/SHA-256 PII protection, biometrics, and root/jailbreak checks.</div>
+          <div class="strength-item reveal reveal-delay-5" data-i18n="about.strength4">Complex integrations: AI voice agents &amp; LLMs (Gemini API, Retell AI), payment gateways, POS thermal printers (Native Java), Agora, SignalR, and WebSockets.</div>
+          <div class="strength-item reveal reveal-delay-5" data-i18n="about.strength5">Platform-level debugging, native Swift/Kotlin plugins, Android NDK (16KB page alignment), and full Arabic/English (RTL/LTR) localization.</div>
         </div>
       </div>
     </section>
@@ -282,7 +282,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
             </div>
             <h3 class="project-title" data-i18n="proj.homesecretary.title">Home Secretary</h3>
-            <p class="project-description" data-i18n="proj.homesecretary.desc">Full-stack household management &amp; scheduling app built with Flutter (Riverpod) and ASP.NET Core Web API / SQL Server using the Outbox Pattern, Background Jobs, and Speech-to-Text.</p>
+            <p class="project-description" data-i18n="proj.homesecretary.desc">Full-stack AI voice-agent &amp; smart calling platform built with Flutter (Riverpod 3, custom ar-SA dictation engine) and ASP.NET Core (.NET 10, CQRS/MediatR, SignalR, Transactional Outbox) orchestrating Retell AI phone calls, Gemini NLP Hijri/Gregorian scheduling, and AES-256 PII encryption.</p>
             <div class="project-links">
               <a href="https://apps.apple.com/us/app/%D8%A7%D9%84%D8%B3%D9%83%D8%B1%D8%AA%D9%8A%D8%B1-%D8%A7%D9%84%D9%85%D9%86%D8%B2%D9%84%D9%8A/id6807824158" target="_blank" rel="noopener noreferrer" class="store-btn store-btn-apple" aria-label="Apple App Store">
                 <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
@@ -451,6 +451,8 @@
             <span class="skill-chip">Dart</span>
             <span class="skill-chip">C#</span>
             <span class="skill-chip">Java</span>
+            <span class="skill-chip">Kotlin</span>
+            <span class="skill-chip">Swift</span>
             <span class="skill-chip">C/C++</span>
             <span class="skill-chip">SQL</span>
           </div>
@@ -461,8 +463,11 @@
           <h3 class="skills-category-title" data-i18n="skills.cat.frameworks">Frameworks &amp; Backend</h3>
           <div class="skills-wrap">
             <span class="skill-chip">Flutter</span>
-            <span class="skill-chip">ASP.NET Core Web API</span>
+            <span class="skill-chip">ASP.NET Core (.NET 10)</span>
+            <span class="skill-chip">EF Core</span>
             <span class="skill-chip">SQL Server</span>
+            <span class="skill-chip">SignalR</span>
+            <span class="skill-chip">CQRS (MediatR)</span>
           </div>
         </div>
 
@@ -474,6 +479,7 @@
             <span class="skill-chip">Bloc</span>
             <span class="skill-chip">Provider</span>
             <span class="skill-chip">GetX</span>
+            <span class="skill-chip">Freezed</span>
           </div>
         </div>
 
@@ -534,7 +540,8 @@
         <div class="skills-category reveal reveal-delay-5">
           <h3 class="skills-category-title" data-i18n="skills.cat.ai">AI & Productivity</h3>
           <div class="skills-wrap">
-            <span class="skill-chip">Gemini</span>
+            <span class="skill-chip">Google Gemini API</span>
+            <span class="skill-chip">Retell AI Voice Agents</span>
             <span class="skill-chip">GitHub Copilot</span>
             <span class="skill-chip">Cursor</span>
             <span class="skill-chip" data-i18n="skills.prompt">Prompt Engineering</span>
