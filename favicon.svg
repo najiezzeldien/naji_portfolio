@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="bg-light" x1="6" y1="4" x2="58" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="52%" stop-color="#1F4E79"/>
+      <stop offset="100%" stop-color="#143352"/>
+    </linearGradient>
+    <linearGradient id="bg-dark" x1="6" y1="4" x2="58" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="55%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#173A60"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="20" cy="10" r="36" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#93C5FD" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#93C5FD" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="squircle">
+      <rect x="2" y="2" width="60" height="60" rx="15"/>
+    </clipPath>
+    <style>
+      .tile { fill: url(#bg-light); }
+      .rim { stroke: #FFFFFF; stroke-opacity: 0.18; }
+      @media (prefers-color-scheme: dark) {
+        .tile { fill: url(#bg-dark); }
+        .rim { stroke: #93C5FD; stroke-opacity: 0.28; }
+      }
+    </style>
+  </defs>
+
+  <g clip-path="url(#squircle)">
+    <rect class="tile" x="2" y="2" width="60" height="60" rx="15"/>
+    <rect x="2" y="2" width="60" height="60" rx="15" fill="url(#glow)"/>
+    <rect class="rim" x="2.5" y="2.5" width="59" height="59" rx="14.5" stroke-width="1"/>
+  </g>
+
+  <!-- Optically balanced geometric 'N' monogram -->
+  <path
+    d="M18.5 46.4V17.6C18.5 16.72 19.22 16 20.1 16H25.2C25.85 16 26.45 16.34 26.78 16.9L38.3 36.15V17.6C38.3 16.72 39.02 16 39.9 16H43.9C44.78 16 45.5 16.72 45.5 17.6V46.4C45.5 47.28 44.78 48 43.9 48H38.8C38.15 48 37.55 47.66 37.22 47.1L25.7 27.85V46.4C25.7 47.28 24.98 48 24.1 48H20.1C19.22 48 18.5 47.28 18.5 46.4Z"
+    fill="#FFFFFF"
+  />
+</svg>
