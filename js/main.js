@@ -643,8 +643,38 @@
     elements.forEach((el) => observer.observe(el));
   }
 
+  /* ── 9. Evict Legacy Flutter Service Workers & Icon Caches ── */
+  function cleanupLegacyFlutterCaches() {
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker
+        .getRegistrations()
+        .then((registrations) => {
+          for (const reg of registrations) {
+            if (reg.scope.includes("naji_portfolio")) {
+              reg.unregister();
+            }
+          }
+        })
+        .catch(() => {});
+    }
+
+    if ("caches" in window) {
+      caches
+        .keys()
+        .then((keys) => {
+          for (const key of keys) {
+            if (key.startsWith("flutter-")) {
+              caches.delete(key);
+            }
+          }
+        })
+        .catch(() => {});
+    }
+  }
+
   /* ── Initialize Everything on DOM Ready ───────────────────── */
   document.addEventListener("DOMContentLoaded", () => {
+    cleanupLegacyFlutterCaches();
     initThemeToggle();
     initAdaptiveNavbar();
     initLanguageToggle();
