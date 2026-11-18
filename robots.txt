@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://najiezzeldien.github.io/naji_portfolio/sitemap.xml

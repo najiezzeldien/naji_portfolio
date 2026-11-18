@@ -10,30 +10,302 @@
       const savedScheme = localStorage.getItem("color-scheme");
       document.querySelector('meta[name="color-scheme"]').content =
         savedScheme === "light" || savedScheme === "dark" ? savedScheme : "light dark";
-      const savedLang = localStorage.getItem("portfolio-lang");
-      if (savedLang === "ar" || savedLang === "en") {
-        document.documentElement.lang = savedLang;
-        document.documentElement.dir = savedLang === "ar" ? "rtl" : "ltr";
+      const queryLang = new URLSearchParams(window.location.search).get("lang");
+      const activeLang =
+        queryLang === "ar" || queryLang === "en"
+          ? queryLang
+          : localStorage.getItem("portfolio-lang");
+      if (activeLang === "ar" || activeLang === "en") {
+        document.documentElement.lang = activeLang;
+        document.documentElement.dir = activeLang === "ar" ? "rtl" : "ltr";
       }
     } catch {}
   </script>
 
-  <!-- SEO -->
-  <title>Naji Ezzeldien — Senior Mobile Applications Engineer (Flutter) | Portfolio</title>
-  <meta name="description" content="Portfolio of Naji Ezzeldien — Senior Mobile Applications Engineer (Flutter &amp; Dart) with 5+ years of hands-on experience, 10 published apps, and 102,000+ downloads across Google Play, Apple App Store, and Sunmi POS Store.">
-  <meta name="keywords" content="Naji Ezzeldien, Senior Flutter Engineer, Mobile Applications Engineer, Dart, Riverpod, Bloc, Clean Architecture, Riyadh, Portfolio">
+  <!-- Primary SEO & Indexing -->
+  <title>Naji Ezzeldien (ناجي عزالدين) — Senior Mobile Applications Engineer (Flutter) | Portfolio</title>
+  <meta name="description" id="metaDescription" content="Official portfolio of Naji Ezzeldien (ناجي عزالدين) — Senior Mobile Applications Engineer (Flutter &amp; Dart) in Riyadh, Saudi Arabia at Management Intelligence Company (MIC). 5+ years of experience, 10 published apps, and 102,000+ downloads across the Apple App Store, Google Play, and Sunmi POS Store.">
+  <meta name="keywords" content="Naji Ezzeldien, ناجي عزالدين, المهندس ناجي عزالدين, Naji Ezzeddine, Senior Flutter Engineer, Mobile Applications Engineer, Flutter Developer Riyadh, Dart, Riverpod, Bloc, Clean Architecture, Management Intelligence Company, MIC, Portfolio">
   <meta name="author" content="Naji Ezzeldien">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Naji Ezzeldien — Senior Mobile Applications Engineer (Flutter)">
-  <meta property="og:description" content="5+ years of hands-on Flutter &amp; Dart architecture across iOS, Android, Web, and Sunmi POS. 10 published apps, 102,000+ downloads.">
-  <meta property="og:type" content="website">
+  <!-- Canonical & Bilingual Hreflang Alternates -->
+  <link rel="canonical" id="canonicalLink" href="https://najiezzeldien.github.io/naji_portfolio/">
+  <link rel="alternate" hreflang="en" href="https://najiezzeldien.github.io/naji_portfolio/">
+  <link rel="alternate" hreflang="ar" href="https://najiezzeldien.github.io/naji_portfolio/?lang=ar">
+  <link rel="alternate" hreflang="x-default" href="https://najiezzeldien.github.io/naji_portfolio/">
+
+  <!-- Open Graph (LinkedIn, WhatsApp, Facebook) -->
+  <meta property="og:site_name" content="Naji Ezzeldien — Engineering Portfolio">
+  <meta property="og:title" content="Naji Ezzeldien (ناجي عزالدين) — Senior Mobile Applications Engineer (Flutter)">
+  <meta property="og:description" content="5+ years of hands-on Flutter &amp; Dart architecture across iOS, Android, Web, and Sunmi POS. 10 published apps, 102,000+ cumulative downloads.">
+  <meta property="og:type" content="profile">
   <meta property="og:url" content="https://najiezzeldien.github.io/naji_portfolio/">
+  <meta property="og:image" content="https://najiezzeldien.github.io/naji_portfolio/og-preview.png">
+  <meta property="og:image:secure_url" content="https://najiezzeldien.github.io/naji_portfolio/og-preview.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Naji Ezzeldien (ناجي عزالدين) — Senior Mobile Applications Engineer (Flutter) · 10 Published Apps · 102K+ Downloads">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ar_SA">
+  <meta property="profile:first_name" content="Naji">
+  <meta property="profile:last_name" content="Ezzeldien">
+  <meta property="profile:username" content="najiezzeldien">
 
-  <!-- Twitter Card -->
+  <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Naji Ezzeldien — Senior Mobile Applications Engineer (Flutter)">
+  <meta name="twitter:title" content="Naji Ezzeldien (ناجي عزالدين) — Senior Mobile Applications Engineer (Flutter)">
   <meta name="twitter:description" content="5+ years of hands-on Flutter &amp; Dart architecture across iOS, Android, Web, and Sunmi POS. 10 published apps, 102,000+ downloads.">
+  <meta name="twitter:image" content="https://najiezzeldien.github.io/naji_portfolio/og-preview.png">
+  <meta name="twitter:image:alt" content="Naji Ezzeldien — Senior Mobile Applications Engineer (Flutter)">
+
+  <!-- Structured Data (Schema.org ProfilePage + Person + Published Mobile Apps for Google Search & AI Overviews) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://najiezzeldien.github.io/naji_portfolio/#website",
+        "url": "https://najiezzeldien.github.io/naji_portfolio/",
+        "name": "Naji Ezzeldien — Senior Mobile Applications Engineer Portfolio",
+        "alternateName": "ملف أعمال ناجي عزالدين — مهندس أول لتطبيقات الجوّال",
+        "inLanguage": ["en", "ar"],
+        "publisher": {
+          "@id": "https://najiezzeldien.github.io/naji_portfolio/#person"
+        }
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://najiezzeldien.github.io/naji_portfolio/#profilepage",
+        "url": "https://najiezzeldien.github.io/naji_portfolio/",
+        "name": "Naji Ezzeldien (ناجي عزالدين) — Senior Mobile Applications Engineer (Flutter)",
+        "description": "Official engineering portfolio of Naji Ezzeldien (ناجي عزالدين), Senior Mobile Applications Engineer (Flutter & Dart) in Riyadh, Saudi Arabia, showcasing 10 published iOS, Android, Web, and Sunmi POS applications surpassing 102,000 downloads.",
+        "inLanguage": ["en", "ar"],
+        "dateModified": "2026-11-18",
+        "isPartOf": {
+          "@id": "https://najiezzeldien.github.io/naji_portfolio/#website"
+        },
+        "mainEntity": {
+          "@id": "https://najiezzeldien.github.io/naji_portfolio/#person"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://najiezzeldien.github.io/naji_portfolio/#person",
+        "name": "Naji Ezzeldien",
+        "givenName": "Naji",
+        "familyName": "Ezzeldien",
+        "alternateName": [
+          "ناجي عزالدين",
+          "المهندس ناجي عزالدين",
+          "Naji Ezzeddine",
+          "najiezzeldien"
+        ],
+        "jobTitle": "Senior Mobile Applications Engineer (Flutter)",
+        "description": "Senior Mobile Applications Engineer with over 5 years of hands-on experience architecting, building, and shipping cross-platform iOS, Android, Web, and Sunmi POS applications using Flutter and Dart, surpassing 102,000 cumulative store downloads across 10 production apps.",
+        "url": "https://najiezzeldien.github.io/naji_portfolio/",
+        "image": "https://najiezzeldien.github.io/naji_portfolio/og-preview.png",
+        "email": "mailto:aboalnaja10@gmail.com",
+        "telephone": "+966500122768",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Riyadh",
+          "addressCountry": "SA"
+        },
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Management Intelligence Company (MIC)",
+          "alternateName": "شركة الذكاء الإداري (MIC)",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Riyadh",
+            "addressCountry": "SA"
+          }
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Sciences and Technology"
+        },
+        "knowsLanguage": ["ar", "en"],
+        "knowsAbout": [
+          "Flutter",
+          "Dart",
+          "Clean Architecture",
+          "Riverpod",
+          "Bloc / Cubit",
+          "iOS & Android Application Development",
+          "FinTech & Payment Gateways",
+          "Sunmi POS Thermal Printing",
+          "Mobile Application Security"
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/najiezzeldien",
+          "https://github.com/najiezzeldien"
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://najiezzeldien.github.io/naji_portfolio/#published-apps",
+        "name": "Published Production Mobile Applications by Naji Ezzeldien",
+        "numberOfItems": 10,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "MobileApplication",
+              "name": "O-Anywhere",
+              "operatingSystem": "iOS, Android",
+              "applicationCategory": "BusinessApplication",
+              "author": { "@id": "https://najiezzeldien.github.io/naji_portfolio/#person" },
+              "sameAs": [
+                "https://apps.apple.com/sa/app/o-anywhere/id1599979909?l=ar",
+                "https://play.google.com/store/apps/details?id=com.mic.anyware"
+              ]
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "MobileApplication",
+              "name": "AppKey (مفتاح التطبيقات)",
+              "operatingSystem": "iOS, Android",
+              "applicationCategory": "SecurityApplication",
+              "author": { "@id": "https://najiezzeldien.github.io/naji_portfolio/#person" },
+              "sameAs": [
+                "https://apps.apple.com/us/app/appkey/id6827119695",
+                "https://play.google.com/store/apps/details?id=com.mic.appkey"
+              ]
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "MobileApplication",
+              "name": "Home Secretary (السكرتير المنزلي)",
+              "operatingSystem": "iOS, Android",
+              "applicationCategory": "ProductivityApplication",
+              "author": { "@id": "https://najiezzeldien.github.io/naji_portfolio/#person" },
+              "sameAs": [
+                "https://apps.apple.com/us/app/%D8%A7%D9%84%D8%B3%D9%83%D8%B1%D8%AA%D9%8A%D8%B1-%D8%A7%D9%84%D9%85%D9%86%D8%B2%D9%84%D9%8A/id6807824158",
+                "https://play.google.com/store/apps/details?id=com.mic.home_secretary"
+              ]
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "MobileApplication",
+              "name": "Munasiq (منسق)",
+              "operatingSystem": "iOS, Android, Web",
+              "applicationCategory": "ProductivityApplication",
+              "author": { "@id": "https://najiezzeldien.github.io/naji_portfolio/#person" },
+              "sameAs": [
+                "https://apps.apple.com/us/app/%D9%85%D9%86%D8%B3%D9%82/id6758393913?l=ar",
+                "https://play.google.com/store/apps/details?id=com.mic.sharedCalendar"
+              ]
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@type": "MobileApplication",
+              "name": "Albaraka Insurance (البركة للتأمين)",
+              "operatingSystem": "iOS, Android",
+              "applicationCategory": "FinanceApplication",
+              "author": { "@id": "https://najiezzeldien.github.io/naji_portfolio/#person" },
+              "sameAs": [
+                "https://apps.apple.com/us/app/البركة-للتأمين/id6755429999",
+                "https://play.google.com/store/apps/details?id=ly.albaraka.insurancep"
+              ]
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "item": {
+              "@type": "MobileApplication",
+              "name": "Sanad Customer (سند)",
+              "operatingSystem": "iOS, Android",
+              "applicationCategory": "FinanceApplication",
+              "author": { "@id": "https://najiezzeldien.github.io/naji_portfolio/#person" },
+              "sameAs": [
+                "https://apps.apple.com/us/app/سنـد/id6749844909",
+                "https://play.google.com/store/apps/details?id=ly.becom.sanadcustomers&hl=en"
+              ]
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "item": {
+              "@type": "MobileApplication",
+              "name": "Sanad Merchant (سند التاجر)",
+              "operatingSystem": "iOS, Android, Sunmi POS",
+              "applicationCategory": "FinanceApplication",
+              "author": { "@id": "https://najiezzeldien.github.io/naji_portfolio/#person" },
+              "sameAs": [
+                "https://apps.apple.com/us/app/سند-التاجر/id6770513889",
+                "https://play.google.com/store/apps/details?id=ly.becom.sanadmerchantapp"
+              ]
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 8,
+            "item": {
+              "@type": "MobileApplication",
+              "name": "Sanad Agent (سند العميل)",
+              "operatingSystem": "iOS, Android",
+              "applicationCategory": "BusinessApplication",
+              "author": { "@id": "https://najiezzeldien.github.io/naji_portfolio/#person" },
+              "sameAs": [
+                "https://apps.apple.com/us/app/سند-العميل/id6761775476",
+                "https://play.google.com/store/apps/details?id=ly.becom.sanadCompany"
+              ]
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 9,
+            "item": {
+              "@type": "MobileApplication",
+              "name": "Lingo (لينقو)",
+              "operatingSystem": "iOS, Android",
+              "applicationCategory": "EducationalApplication",
+              "author": { "@id": "https://najiezzeldien.github.io/naji_portfolio/#person" },
+              "sameAs": [
+                "https://apps.apple.com/us/app/lingo-%D9%84%D9%8A%D9%86%D9%82%D9%88/id1559887910",
+                "https://play.google.com/store/apps/details?id=com.ebtekar.lingo"
+              ]
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 10,
+            "item": {
+              "@type": "MobileApplication",
+              "name": "Shin Aljaw (شن الجو)",
+              "operatingSystem": "iOS, Android",
+              "applicationCategory": "WeatherApplication",
+              "author": { "@id": "https://najiezzeldien.github.io/naji_portfolio/#person" },
+              "sameAs": [
+                "https://apps.apple.com/us/app/%D8%B4%D9%86-%D8%A7%D9%84%D8%AC%D9%88/id6503896230?platform=iphone",
+                "https://play.google.com/store/apps/details?id=com.ebtekar.shin_aljaw"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <!-- Brand Favicon & Touch Icons (Collision-free filenames to bypass Safari/Flutter favicon cache) -->
   <link rel="icon" type="image/png" sizes="32x32" href="./brand-icon-32.png">

@@ -33,7 +33,15 @@
   }
 
   /* ── State ────────────────────────────────────────────────── */
-  let currentLang = getStorage("portfolio-lang") === "ar" ? "ar" : "en";
+  function resolveInitialLang() {
+    try {
+      const q = new URLSearchParams(window.location.search).get("lang");
+      if (q === "ar" || q === "en") return q;
+    } catch {}
+    return getStorage("portfolio-lang") === "ar" ? "ar" : "en";
+  }
+
+  let currentLang = resolveInitialLang();
   let currentFilter = "all";
   let activeCaseStudyId = null;
   let measureNavbarFn = null;
@@ -128,8 +136,24 @@
 
     document.title =
       currentLang === "ar"
-        ? "ناجي عزالدين — مهندس أول لتطبيقات الجوّال (Flutter) | ملف الأعمال"
-        : "Naji Ezzeldien — Senior Mobile Applications Engineer (Flutter) | Portfolio";
+        ? "ناجي عزالدين (Naji Ezzeldien) — مهندس أول لتطبيقات الجوّال (Flutter) | ملف الأعمال"
+        : "Naji Ezzeldien (ناجي عزالدين) — Senior Mobile Applications Engineer (Flutter) | Portfolio";
+
+    const metaDesc = document.getElementById("metaDescription");
+    if (metaDesc) {
+      metaDesc.setAttribute(
+        "content",
+        currentLang === "ar"
+          ? "ملف الأعمال الرسمي للمهندس ناجي عزالدين (Naji Ezzeldien) — مهندس أول لتطبيقات الجوّال (Flutter & Dart) في الرياض بشركة الذكاء الإداري (MIC). خبرة +5 سنوات، 10 تطبيقات منشورة، وأكثر من 102,000 عملية تحميل."
+          : "Official portfolio of Naji Ezzeldien (ناجي عزالدين) — Senior Mobile Applications Engineer (Flutter & Dart) in Riyadh, Saudi Arabia at Management Intelligence Company (MIC). 5+ years of experience, 10 published apps, and 102,000+ downloads across the Apple App Store, Google Play, and Sunmi POS Store."
+      );
+    }
+
+    const canonical = document.getElementById("canonicalLink");
+    if (canonical) {
+      const base = "https://najiezzeldien.github.io/naji_portfolio/";
+      canonical.setAttribute("href", currentLang === "ar" ? `${base}?lang=ar` : base);
+    }
 
     updateProjectsCountText();
 
