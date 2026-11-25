@@ -196,7 +196,7 @@ const translations = {
     "contact.lang.ar.name": "Arabic",
     "contact.lang.ar.level": "Native / Bilingual Proficiency",
     "contact.lang.en.name": "English",
-    "contact.lang.en.level": "Professional Working Proficiency",
+    "contact.lang.en.level": "Limited Working Proficiency",
 
     // Contact & Footer
     "contact.eyebrow": "Direct Channels",
@@ -407,7 +407,7 @@ const translations = {
     "contact.lang.ar.name": "اللغة العربية",
     "contact.lang.ar.level": "اللغة الأم",
     "contact.lang.en.name": "اللغة الإنجليزية",
-    "contact.lang.en.level": "كفاءة عمل مهنية",
+    "contact.lang.en.level": "كفاءة عمل محدودة",
 
     // Contact & Footer
     "contact.eyebrow": "قنوات التواصل المباشر",
